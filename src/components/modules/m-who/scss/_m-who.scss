@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$module-name: 'who';
+
+$slashUrl: './assets/img/slash.svg';
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    position: relative;
+
+    h1 {
+        @include rem(55);
+        font-family: $font-family--secondary;
+        text-transform: uppercase;
+        margin: 0;
+        text-align: center;
+        line-height: calc(100vh - 146px);
+        z-index: 2;
+
+        @media (min-width: breakpoint-min(xs)) {
+            @include rem(75);
+        }
+        
+        @media (min-width: breakpoint-min(sm)) {
+            @include rem(100);
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            @include rem(130);
+        }
+
+        @media (min-width: breakpoint-min(lg)) {
+            @include rem(175);
+        }
+
+        span {
+            background-image: url($slashUrl);
+            height: 40px;
+            width: 40px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: inline-block;
+
+            @media (min-width: breakpoint-min(xs)) {
+                height: 55px;
+                width: 55px;
+            }
+            
+            @media (min-width: breakpoint-min(sm)) {
+                height: 80px;
+                width: 80px;
+            }
+    
+            @media (min-width: breakpoint-min(md)) {
+                height: 100px;
+                width: 100px;
+            }
+    
+            @media (min-width: breakpoint-min(lg)) {
+                height: 125px;
+                width: 125px;
+            }
+
+        }
+
+    }
+
+    &__detail {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 140%);
+        text-align: center;
+        z-index: 1;
+        
+        @media (min-width: breakpoint-min(xs)) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-75%, 50%);
+            text-align: left;
+        }
+
+        @media (min-width: breakpoint-min(sm)) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-100%,70%);
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-130%,80%);
+        }
+
+        @media (min-width: breakpoint-min(lg)) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-175%,90%);
+        }
+
+    }
+
+    h2 {
+        margin: 0;
+        width: 250px;
+        line-height: 2;
+    }
+
+    &__img {
+        width: 250px;
+        height: 250px;
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        @media (min-width: breakpoint-min(sm)) {
+            width: 300px;
+            height: 300px;
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            width: 375px;
+            height: 375px;
+        }
+
+        @media (min-width: breakpoint-min(lg)) {
+            width: 450px;
+            height: 450px;
+        }
+
+    }
+
+}

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'textarea';
+$textarea-font-family: $font-family--primary;
+$textarea-radius: 5px;
+$textarea-padding: 1rem;
+$textarea-border-width: 2px;
+$textarea-border-style: solid;
+$textarea-border-color--primary: map-get($colors, primary);
+$textarea-margin: 0rem 0 1rem;
+$textarea-min-width: 100px;
+$textarea-width: 100%;
+$textarea-min-height: 200px;
+$textarea-height: 100%;
+$textarea-background-color: map-get($colors, white);
+$textarea-font-color: choose-contrast-color($textarea-background-color);
+$textarea-outline: none;
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	min-width: $textarea-min-width;
+	width: $textarea-width;
+	min-height: $textarea-min-height;
+	height: $textarea-height;
+	padding: $textarea-padding;
+	margin: $textarea-margin;
+	border: $textarea-border-width $textarea-border-style
+		$textarea-border-color--primary;
+	border-radius: $textarea-radius;
+	font-family: $textarea-font-family;
+	color: $textarea-font-color;
+	background-color: $textarea-background-color;
+	outline: $textarea-outline;
+
+	&:hover,
+	&:focus {
+		border-color: darken($textarea-border-color--primary, 10%);
+	}
+
+	&--resizenone {
+		resize: none !important;
+	}
+}
+
+textarea {
+	min-width: $textarea-min-width;
+	min-height: $textarea-min-height;
+	width: $textarea-width;
+	height: $textarea-height;
+	border: $textarea-border-width $textarea-border-style
+		$textarea-border-color--primary;
+	padding: $textarea-padding;
+	margin: $textarea-margin;
+	border-radius: $textarea-radius;
+	outline: $textarea-outline;
+}

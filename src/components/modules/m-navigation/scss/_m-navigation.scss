@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'navigation';
+
+$slashUrl: './assets/img/slash.svg';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	display: none;
+    height: 100%;
+	z-index: 100;
+	transform: translate(0, 10%);
+
+	span {
+		background-image: url($slashUrl);
+		display: inline-block;
+		height: 20px;
+		width: 20px;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@media (min-width: breakpoint-min(md)) {
+			height: 27px;
+			width: 27px;
+		}
+	}
+
+	&__list, ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item, li {
+		list-style: none;
+		text-align: center;
+		font-family: $font-family--secondary;
+		margin: 0;
+		padding: 40px 0;
+
+		&:first-child {
+			text-transform: uppercase;
+		}
+
+		a {
+			font-family: $font-family--secondary;
+		}
+
+	}
+
+	.current-menu-item {
+		a {
+			color: map-get($colors, grayed);
+		}
+	}
+
+}
+
+.m-#{$module-name}.is--active {
+	display: block;
+}

@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'table';
+$table-font-family: $font-family--primary;
+$table-font-weight: 600;
+$table-margin: 1rem 0 2rem 0;
+$table-primary-color: map-get($colors, primary);
+$table-font-color: map-get($colors, black);
+$table-cell-padding: 10px 20px;
+$table-border-width: 1px;
+$table-border-style: solid;
+$table-border-color: map-get($colors, grayC);
+$table-dark-theme-color: lighten(map-get($colors, black), 20%);
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+// Extends for table and caption for reuse purpose
+%table {
+	// min-width: 768px;
+	width: 100%;
+	height: auto;
+	border-collapse: collapse;
+	margin: $table-margin;
+	color: $table-font-color;
+}
+
+%caption {
+	margin-bottom: 10px;
+	font-weight: $table-font-weight;
+	@include rem(24);
+}
+
+%scroll {
+	overflow-x: auto;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+// Base styling
+.o-#{$object-name} {
+	@extend %table;
+
+	caption {
+		@extend %caption;
+	}
+
+	thead {
+		tr {
+			border-top: $table-border-width $table-border-style
+				$table-border-color;
+			border-bottom-width: 2px;
+
+			&:hover,
+			&:focus {
+				background-color: transparent;
+			}
+		}
+	}
+
+	tr {
+		border-bottom: $table-border-width $table-border-style
+			$table-border-color;
+
+		&:hover,
+		&:focus {
+			background-color: map-get($colors, grayE);
+			color: choose-contrast-color(map-get($colors, grayE));
+		}
+	}
+
+	th {
+		padding: $table-cell-padding;
+		text-align: left;
+	}
+
+	td {
+		padding: $table-cell-padding;
+	}
+
+	// Add border to every cell
+	&--border {
+		td,
+		th {
+			border: $table-border-width $table-border-style $table-border-color;
+		}
+	}
+
+	// Dark theme table
+	&--dark {
+		thead {
+			tr {
+				border-top: none;
+			}
+		}
+
+		tr {
+			background-color: $table-dark-theme-color;
+			color: map-get($colors, white);
+
+			&:hover,
+			&:focus {
+				background-color: lighten(map-get($colors, black), 50%);
+				color: choose-contrast-color(
+					lighten(map-get($colors, black), 50%)
+				);
+			}
+		}
+
+		// Enable odd rows to have different color in dark theme table
+		&--odd {
+			tbody {
+				tr:nth-child(odd) {
+					background-color: lighten($table-dark-theme-color, 20%);
+
+					&:hover,
+					&:focus {
+						background-color: lighten(map-get($colors, black), 50%);
+						color: choose-contrast-color(
+							lighten(map-get($colors, black), 50%)
+						);
+					}
+				}
+			}
+		}
+
+		// Enable even rows to have different color in dark theme table
+		&--even {
+			tbody {
+				tr:nth-child(even) {
+					background-color: lighten($table-dark-theme-color, 20%);
+
+					&:hover,
+					&:focus {
+						background-color: lighten(map-get($colors, black), 50%);
+						color: choose-contrast-color(
+							lighten(map-get($colors, black), 50%)
+						);
+					}
+				}
+			}
+		}
+	}
+
+	// Enable dark head row
+	&--dark-thead {
+		thead {
+			tr {
+				background-color: $table-dark-theme-color;
+				color: white;
+				border-top: none;
+				border-bottom: none;
+			}
+		}
+	}
+
+	// Enable odd rows to have different color
+	&--odd {
+		tbody {
+			tr:nth-child(odd) {
+				background-color: map-get($colors, grayC);
+			}
+		}
+	}
+
+	// Enable even rows to have different color
+	&--even {
+		tbody {
+			tr:nth-child(even) {
+				background-color: map-get($colors, grayC);
+			}
+		}
+	}
+
+	&--responsive {
+		@extend %scroll;
+	}
+
+	&--success {
+		background-color: map-get($colors-validation, success-green);
+		color: map-get($colors, white);
+	}
+
+	&--warning {
+		background-color: map-get($colors-validation, warning-orange);
+		color: map-get($colors, white);
+	}
+
+	&--info {
+		background-color: map-get($colors-validation, info-blue);
+		color: map-get($colors, white);
+	}
+
+	&--error {
+		background-color: map-get($colors-validation, error-red);
+		color: map-get($colors, white);
+	}
+}
+
+// Base table style without class
+table {
+	@extend %table;
+
+	caption {
+		@extend %caption;
+	}
+
+	thead {
+		tr {
+			border-top: $table-border-width $table-border-style
+				$table-border-color;
+			border-bottom-width: 2px;
+		}
+	}
+
+	tr {
+		border-bottom: $table-border-width $table-border-style
+			$table-border-color;
+	}
+
+	th {
+		padding: $table-cell-padding;
+		text-align: left;
+	}
+
+	td {
+		padding: $table-cell-padding;
+	}
+}

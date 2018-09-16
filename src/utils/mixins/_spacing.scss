@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+/* =============================================================================
+MIXIN: CLEARFIX ON ELMENT, ADD BEFORE AND AFTER PSUEDO ELMENTS
+USEAGE: @include make-resp-spacin($spacing-small, $space-prefixes-resp, $breakpoints, 'small');
+REFERENCE:
+============================================================================= */
+
+@mixin make-resp-spacing($values, $prefixes, $breakpoints, $size) {
+	@each $attr-short, $attr-long in $prefixes {
+		@each $breakpoint, $spacing in $values {
+			.#{$attr-short}-#{$size} {
+				@if $breakpoint == 'd' {
+					#{$attr-long}: #{$spacing};
+				} @else {
+					@media (min-width: breakpoint-min(#{$breakpoint})) {
+						#{$attr-long}: #{$spacing};
+					}
+				}
+			}
+		}
+	}
+}

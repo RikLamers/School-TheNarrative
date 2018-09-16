@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+// https://css-tricks.com/overriding-default-button-styles/
+// https://fvsch.com/code/styling-buttons/
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'btn';
+$button-font-family: $font-family--primary;
+$button-font-weight: normal;
+$button-background--primary: map-get($colors, primary);
+$button-font-color--primary: map-get($colors, white);
+$button-background--secondary: map-get($colors, secondary);
+$button-font-color--secondary: map-get($colors, white);
+$button-radius: 20px;
+$border-radius-rounded: 25px;
+$button-padding-xs: 1rem 1.5rem;
+$button-padding: 1rem 2.5rem;
+$button-padding-xl: 1.5rem 3rem;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: transparent;
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+%button-base {
+	color: $button-font-color--primary;
+	display: inline-block;
+	margin: 0;
+	font-weight: $button-font-weight;
+	font-family: $button-font-family;
+	line-height: 1.4;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+	text-decoration: none;
+	background-image: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: $button-border-width $button-border-style $button-border-color;
+	@include border-radius($button-radius);
+	@include transition(background, 250ms, ease-in-out);
+	@include transition(transform, 150ms, ease-in-out);
+
+	&:focus {
+		outline-offset: -4px;
+	}
+
+	&:active {
+		transform: translateY(1px);
+		filter: saturate(150%);
+	}
+
+	&::-moz-focus-inner {
+		border: none;
+	}
+}
+
+// Default button
+.o-#{$object-name} {
+	padding: $button-padding;
+	@extend %button-base;
+	@include rem(16);
+
+	&--ghost {
+		color: $button-background--primary;
+		background-color: map-get($colors, white);
+		border: 2px $button-border-style $button-background--primary;
+
+		&:hover {
+			color: darken($button-background--primary, 10%);
+			border-color: darken($button-background--primary, 10%);
+			background-color: map-get($colors, white);
+		}
+	}
+}
+
+// Button size variations
+.o-#{$object-name}--xs {
+	padding: $button-padding-xs;
+	@extend %button-base;
+	@include rem(14);
+}
+
+.o-#{$object-name}--xl {
+	padding: $button-padding-xl;
+	@extend %button-base;
+	@include rem(20);
+	height: 60px;
+	@include border-radius(30px);
+}
+
+// Button type variations
+.o-#{$object-name}--primary {
+	color: $button-font-color--primary;
+	background: $button-background--primary;
+
+	&:hover {
+		color: choose-contrast-color(darken($button-background--primary, 10%));
+		background: darken($button-background--primary, 10%);
+	}
+}
+
+.o-#{$object-name}--secondary {
+	color: $button-font-color--secondary;
+	background: $button-background--secondary;
+
+	&:hover {
+		color: choose-contrast-color(
+			darken($button-background--secondary, 10%)
+		);
+		background: darken($button-background--secondary, 10%);
+	}
+}
+
+// Rounded button
+.o-#{$object-name}--rounded {
+	@include border-radius($border-radius-rounded);
+}
+
+// Button with icons
+.o-#{$object-name}__icon {
+	&-l {
+		margin-left: $margin-xsmall;
+	}
+
+	&-r {
+		margin-right: $margin-xsmall;
+	}
+
+	&--xl {
+		&-l {
+			margin-left: $margin-small;
+		}
+
+		&-r {
+			margin-right: $margin-small;
+		}
+	}
+}
+
+// Default html button style
+input[type='button'],
+button {
+	border: none;
+	padding: $button-padding;
+	color: $button-font-color--primary;
+	background-color: $button-background--primary;
+	@extend %button-base;
+	@include rem(18);
+
+	&:hover {
+		color: choose-contrast-color(darken($button-background--primary, 10%));
+		background-color: darken($button-background--primary, 10%);
+	}
+}

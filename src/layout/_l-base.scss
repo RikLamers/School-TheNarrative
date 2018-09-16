@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/* =============================================================================
+  CONFIG
+============================================================================= */
+
+$body-bg: map-get($colors, white);
+$wrapper-bg: map-get($colors, white);
+$content-bg: map-get($colors, rgb(12, 12, 12));
+
+$topbar-bg: map-get($colors, blue);
+$topbar-height: 40px;
+
+$header-bg: map-get($colors, white);
+$header-height: 80px;
+$header-mobile-height: 60px;
+
+$sidebar-bg: none;
+
+$footer-bg: map-get($colors, gray24);
+$footer-height: 60px;
+$footer-mobile-height: 45px;
+
+/* =============================================================================
+  BASE
+============================================================================= */
+
+body {
+	background: $body-bg;
+
+	&.overflow-hidden-mobile {
+
+		@media (max-width: breakpoint-max(md)) {
+			overflow: hidden;
+		}
+	}
+
+	&.overflow-hidden {
+		overflow: hidden;
+	}
+}
+
+#l-wrapper {
+	padding-top: $header-mobile-height;
+	background: $wrapper-bg;
+	@include clearfix();
+	width: 100%;
+	overflow: hidden;
+
+	@media (min-width: breakpoint-min(lg)) {
+		padding-top: $header-height;
+		//padding-top: 0;
+	}
+}
+
+#l-header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: $header-mobile-height;
+	background: $header-bg;
+	@include clearfix();
+	z-index: 100;
+
+	@media (min-width: breakpoint-min(lg)) {
+		//position: relative;
+		height: $header-height;
+	}
+}
+
+#l-content {
+	background: $content-bg;
+}
+
+// #l-sidebar {
+// 	background: $sidebar-bg;
+// }
+
+#l-footer {
+	background: $footer-bg;
+	@include clearfix();
+}

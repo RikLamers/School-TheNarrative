@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'logo';
+$logo-width: 200px;
+$logo-height: 50px;
+$logo-img-url: './assets/img/logo.svg';
+$logo-img-width--mobile: 100px;
+$logo-img-height--mobile: 25px;
+$logo-img-width--medium: 140px;
+$logo-img-height--medium: 35px;
+$logo-img-width: 200px;
+$logo-img-height: 50px;
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	width: $logo-img-width--medium;
+	height: $logo-img-height--medium;
+	background: url($logo-img-url);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	display: inline-block;
+	color: map-get($colors, black);
+
+	@media (min-width: breakpoint-min(sm)) {
+		width: $logo-img-width--medium;
+		height: $logo-img-height--medium;
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		width: $logo-img-width;
+		height: $logo-img-height;
+	}
+
+}

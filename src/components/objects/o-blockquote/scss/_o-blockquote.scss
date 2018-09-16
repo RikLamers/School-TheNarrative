@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'blockquote';
+
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	margin: 0;
+	padding: 0;
+	@include rem(20);
+	position: relative;
+
+	@media (min-width: breakpoint-min(md)) {
+		@include rem(22);
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		@include rem(24);
+	}
+
+	&__content {
+		position: relative;
+		padding: 30px 40px 0 40px;
+
+		.fa-quote-left {
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: map-get($colors, secondary);
+		}
+
+		.fa-quote-right {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			color: map-get($colors, secondary);
+		}
+	}
+
+	&__footer {
+		margin-left: 40px;
+		margin-right: 50px;
+		border-top: 1px solid map-get($colors, light);
+
+		p {
+			display: block;
+			margin-bottom: 0;
+			padding-top: 15px;
+			@include rem(16);
+		}
+	}
+}

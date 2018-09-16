@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CSS-GRID SYSTEM
+============================================================================= */
+
+$container-maxwidth: 1170px;
+$columns: $grid-columns;
+$gutter: $grid-gutter-width;
+$breakpoints: $grid-breakpoints;
+
+/* =============================================================================
+SELECTOR: CONTAINER WIDTHS
+DESCRIPTION: Set the container width, and override it for fixed navbars in media queries.
+============================================================================= */
+
+.cl-container {
+    max-width: $container-maxwidth;
+	@include make-container();
+}
+
+/* =============================================================================
+SELECTOR: FLUID CONTAINER
+DESCRIPTION: Utilizes the mixin meant for fixed width containers, but with 100% width for fluid, full width layouts.
+============================================================================= */
+
+.cl-container--fluid {
+    @include make-container();
+}
+
+/* =============================================================================
+SELECTOR: ROW
+DESCRIPTION: Rows contain and clear the floats of your columns.
+============================================================================= */
+
+%grid-gap {
+    grid-gap: 0 ($gutter / 3.75);
+
+    @media (min-width: breakpoint-min(md)) {    
+        grid-gap: 0 ($gutter / 3);
+    }
+
+    @media (min-width: breakpoint-min(lg)) {
+        grid-gap: 0 ($gutter / 2);
+    }
+}
+
+.cl-row {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat($columns, [col-start] 1fr);
+    @extend %grid-gap;
+}
+
+.cl-row-auto {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: repeat($columns, [col-start] 1fr);
+    @extend %grid-gap;
+}
+
+/* =============================================================================
+SELECTOR: COL
+DESCRIPTION: grid-column and grid-row mixin to define the positioning of a specific class
+============================================================================= */
+
+@mixin grid-column($column-start, $column-span) {
+    grid-column: $column-start / span $column-span;
+}
+
+@mixin grid-row($row-start, $row-span) {
+    grid-row: $row-start / span $row-span;
+}

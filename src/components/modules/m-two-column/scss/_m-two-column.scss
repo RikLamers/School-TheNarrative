@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$module-name: 'two-column';
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    height: 100%;
+    width: 100%;;
+
+    @media (min-width: breakpoint-min(lg)) {
+        height: calc(100vh - 146px);
+    }
+
+    &__col {
+        display: flex;
+        height: auto;
+        margin-top: 50px;
+
+        @media (min-width: breakpoint-min(xs)) {
+            margin-top: 25px;
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            height: calc(100vh - 146px);
+            margin-top: 0;
+        }
+
+    }
+
+    &__img {
+        width: 275px;
+        height: 275px;
+        margin: 0 auto;
+        align-self: center;
+
+        @media (min-width: breakpoint-min(xs)) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @media (min-width: breakpoint-min(sm)) {
+            width: 500px;
+            height: 500px;
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @media (min-width: breakpoint-min(lg)) {
+            width: 600px;
+            height: 600px;
+        }
+
+        img {
+            margin: 0;
+        }
+
+    }
+
+    &__content {
+        align-self: flex-start;
+        padding: 0 20px;
+        margin-bottom: 10px;
+
+        @media (min-width: breakpoint-min(xs)) {
+            padding: 0 50px;
+        }
+
+        @media (min-width: breakpoint-min(md)) {
+            padding-right: 30px;
+            padding-left: 0;
+            margin-top: 50px;
+        }
+
+        @media (min-width: breakpoint-min(lg)) {
+            padding-right: 60px;
+        }
+
+
+    }
+
+    &__title {
+        text-align: right;
+
+        h4 {
+            margin-top: 0;
+            font-family: $font-family--secondary;
+            text-transform: uppercase;
+            @include rem(16);
+        }
+
+    }
+
+    &__text {
+        text-align: justify;
+        color: map-get($colors, primary);
+    }
+
+}

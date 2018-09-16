@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$tt-norms: 'tt_normsregular';
+$tt-norms-medium: 'tt_normsmedium';
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+@font-face {
+	font-family: 'tt_normsmedium';
+	src: url($file-path-fonts+'ttnorms-medium-webfont.woff2') format('woff2'),
+		url($file-path-fonts+'ttnorms-medium-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'tt_normsregular';
+	src: url($file-path-fonts+'ttnorms-regular-webfont.woff2') format('woff2'),
+		url($file-path-fonts+'ttnorms-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

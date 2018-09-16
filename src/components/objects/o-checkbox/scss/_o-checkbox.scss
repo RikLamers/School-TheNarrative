@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'checkbox';
+$checkbox-font-family: $font-family--primary;
+$checkbox-font-weight: 600;
+$checkbox-margin: 1rem 0 0.5rem 0.5rem;
+$checkbox-font-color: map-get($colors, black);
+$checkbox-primary-color: map-get($colors, primary);
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	display: block;
+	margin: $checkbox-margin;
+}
+
+[type='checkbox'] + label {
+	&:hover,
+	&:focus {
+		border-color: map-get($colors, black);
+	}
+}
+
+/* Base for label styling */
+input[type='checkbox']:not(:checked),
+input[type='checkbox']:checked {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+
+	/* For mobile, it's typically better to position checkbox on top of clickable
+      area and turn opacity to 0 instead. */
+}
+
+[type='checkbox']:not(:checked) + label,
+[type='checkbox']:checked + label {
+	position: relative;
+	padding-left: $padding-large;
+	cursor: pointer;
+}
+
+/* checkbox aspect */
+[type='checkbox']:not(:checked) + label:before,
+[type='checkbox']:checked + label:before {
+	content: '';
+	position: absolute;
+	left: 0px;
+	top: 2px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid $checkbox-primary-color;
+	background: map-get($colors, white);
+	border-radius: 4px;
+}
+
+/* checked mark aspect */
+[type='checkbox']:not(:checked) + label:after,
+[type='checkbox']:checked + label:after {
+	content: '✔';
+	position: absolute;
+	top: 2px;
+	left: 0.2em;
+	font-size: 1.4em;
+	line-height: 0.8;
+	color: map-get($colors-validation, success-green);
+	transition: all 0.2s;
+}
+
+/* checked mark aspect changes */
+[type='checkbox']:not(:checked) + label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+
+[type='checkbox']:checked + label:after {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* disabled checkbox */
+[type='checkbox']:disabled:not(:checked) + label:before,
+[type='checkbox']:disabled:checked + label:before {
+	border-color: map-get($colors, grayC);
+	cursor: not-allowed;
+}
+
+[type='checkbox']:disabled:checked + label:after {
+	color: map-get($colors, grayC);
+	cursor: not-allowed;
+}
+
+[type='checkbox']:disabled + label {
+	color: map-get($colors, grayC);
+	cursor: not-allowed;
+}
+
+/* hover style just for information */
+label:hover:before {
+	border-color: darken($checkbox-primary-color, 10%);
+}

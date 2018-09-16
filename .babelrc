@@ -1,0 +1,12 @@
+{
+	"presets": [
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": ["safari >= 7", "IE 11", "iOS >= 8"]
+				}
+			}
+		]
+	]
+}
