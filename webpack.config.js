@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/home.html'
+			template: './views/index.html'
 		}),
 		new CopyWebpackPlugin([
 			{
