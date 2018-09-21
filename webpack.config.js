@@ -16,6 +16,9 @@ const extractPlugin = new ExtractTextPlugin({
 const scssProcessors = [postcssReporter({ clearReportedMessages: true })];
 
 const config = {
+	node: {
+		fs: 'empty'
+	},
 	context: path.resolve(__dirname, 'src'),
 	entry: {
 		app: './index.js'
@@ -161,7 +164,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/index.html'
+			template: './views/qr.html'
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -180,7 +183,8 @@ const config = {
 			$: 'jquery',
 			jQuery: 'jquery',
 			'window.jQuery': 'jquery',
-			'windows.jQuery': 'jquery'
+			'windows.jQuery': 'jquery',
+			'QrScanner': 'QrScanner'
 		}),
 		extractPlugin
 	],
