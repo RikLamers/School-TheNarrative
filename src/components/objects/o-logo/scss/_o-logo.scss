@@ -7,7 +7,7 @@ CONFIG
 $object-name: 'logo';
 $logo-width: 200px;
 $logo-height: 50px;
-$logo-img-url: './assets/img/logo.svg';
+// $logo-img-url: './assets/img/logo.svg';
 $logo-img-width--mobile: 100px;
 $logo-img-height--mobile: 25px;
 $logo-img-width--medium: 140px;
@@ -22,7 +22,7 @@ BASE
 .o-#{$object-name} {
 	width: $logo-img-width--medium;
 	height: $logo-img-height--medium;
-	background: url($logo-img-url);
+	// background: url($logo-img-url);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
