@@ -44,7 +44,12 @@
 			<div class="l-container">
 				<button id="m-qr-reader__btn">Start Cam</button>
 				<!-- <video id="m-qr-reader__video" width="400px" height="300px"></video> -->
-				<canvas id="m-qr-reader__canvas" width="400px" height="300px"></canvas>
+				<canvas id="m-qr-reader__canvas" width="300px" height="300px"></canvas>
+				<div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+				<div id="output" hidden="">
+					<div id="outputMessage">No QR code detected.</div>
+					<div hidden=""><b>Data:</b> <span id="outputData"></span></div>
+				</div>
 			</div>
 		</main>
 
