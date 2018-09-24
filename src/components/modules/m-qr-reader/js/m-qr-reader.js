@@ -29,7 +29,7 @@ class QrReader {
             e.preventDefault();
             navigator.getMedia = navigator.getUserMedia;
             navigator.getMedia({
-                video: true,
+                video: { facingMode: { exact: 'environment' } },
                 audio: false
             }, (stream) => {
                 this.$video.srcObject = stream;
