@@ -27,9 +27,9 @@ class QrReader {
 	eventListeners() {
         this.$activateCam.addEventListener('click', (e) => {
             e.preventDefault();
-            navigator.getMedia = navigator.getUserMedia;
-            navigator.getMedia({
-                video: { facingMode: { exact: 'environment' } },
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+            navigator.getUserMedia({
+                video: true,
                 audio: false
             }, (stream) => {
                 this.$video.srcObject = stream;
