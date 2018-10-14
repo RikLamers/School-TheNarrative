@@ -6,19 +6,19 @@ class Navigation {
 	}
 
 	setup() {
-		this.$holder = $('.m-navigation');
-		this.$body = $('body');
-		this.$main = this.$body.find('main');
-		this.$navButton = this.$body.find('.m-navigation__toggle');
+		this.$holder = document.getElementsByClassName('m-navigation')[0];
+		this.$body = document.getElementsByTagName('body');
+		this.$main = document.getElementsByTagName('main');
 		this.$nav = this.$holder;
-		this.$navList = this.$holder.find('.m-navigation__list');
-		this.$navItem = this.$navList.find('.m-navigation__item');
+		this.$navButton = document.getElementsByClassName('m-navigation__toggle')[0];
+		this.$navList = document.getElementsByClassName('m-navigation__list')[0];
+		this.$navItem = document.getElementsByClassName('m-navigation__item')[0];
 		this.$mobileNavIsVisibile = false;
-		this.$hideArray = ['m-heroimage', 'm-who', 'm-portfolio', 'm-two-column'];
+
 	}
 
 	eventListeners() {
-		this.$navButton.click((e) => {
+		this.$navButton.addEventListener('click', (e) => {
 			e.preventDefault();
 			this.toggleNav();
 		});
@@ -27,30 +27,16 @@ class Navigation {
 
 	toggleNav() {
 		if (this.$mobileNavIsVisibile) {
-			this.$navButton.removeClass('is--active');
-			this.$body.removeClass('overflow-hidden-mobile');
-			this.$nav.removeClass('is--active');
+			this.$navButton.classList.remove('is--active');
+			// this.$body.classList.remove('overflow-hidden-mobile');
 			this.$mobileNavIsVisibile = false;
-			for (let i = 0; i < this.$hideArray.length; i++) {
-				if (this.$main.find(`.${this.$hideArray[i]}`)) {
-					$(`.${this.$hideArray[i]}`).css({
-						'display': 'block'
-					});
-				}
-			}
+			this.$navList.classList.remove('is--active');
 
 		} else {
-			this.$navButton.addClass('is--active');
-			this.$body.addClass('overflow-hidden-mobile');
-			this.$nav.addClass('is--active');
+			this.$navButton.classList.add('is--active');
+			// this.$body.classList.add('overflow-hidden-mobile');
 			this.$mobileNavIsVisibile = true;
-			for (let i = 0; i < this.$hideArray.length; i++) {
-				if (this.$main.find(`.${this.$hideArray[i]}`)) {
-					$(`.${this.$hideArray[i]}`).css({
-						'display': 'none'
-					});
-				}
-			}
+			this.$navList.classList.add('is--active');
 		}
 	}
 
