@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/index.html'
+			template: './views/game/intro.html'
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -171,6 +171,26 @@ const config = {
 			{
 				from: './assets/js/vendors/detectizr.min.js',
 				to: './js/vendors/'
+			},
+			{
+				from: './assets/img/facebook.svg',
+				to: './img/'
+			},
+			{
+				from: './assets/img/instagram.svg',
+				to: './img/'
+			},
+			{
+				from: './assets/img/safari.svg',
+				to: './img/'
+			},
+			{
+				from: './assets/img/snapchat.svg',
+				to: './img/'
+			},
+			{
+				from: './assets/img/twitter.svg',
+				to: './img/'
 			}
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
