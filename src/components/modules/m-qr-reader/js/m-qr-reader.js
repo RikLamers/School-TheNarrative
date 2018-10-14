@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import jsQR from 'jsqr';
 
 class QrReader {
 	constructor() {

@@ -18,11 +18,12 @@ class Navigation {
 	}
 
 	eventListeners() {
-		this.$navButton.addEventListener('click', (e) => {
-			e.preventDefault();
-			this.toggleNav();
-		});
-
+		if (this.$navButton) {
+			this.$navButton.addEventListener('click', (e) => {
+				e.preventDefault();
+				this.toggleNav();
+			});
+		}
 	}
 
 	toggleNav() {

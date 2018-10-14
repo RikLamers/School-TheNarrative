@@ -11,22 +11,23 @@ class CheckQR {
         this.$btn = this.$holder;
         this.$deviceInfo = JSON.parse(localStorage.getItem('deviceInfo'));
         this.$supportedBrowsers = this.getSupportedBrowsers();
-        console.log(this.$btn);
 	}
 
     eventListeners() {
-        this.$btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isSupported = this.checkSupport(this.$deviceInfo.browser);
-            console.log('fnehfiekn');
-
-            if (isSupported) {
-                window.location.href = '/game/qr-reader';
-            } else {
-                window.location.href = '/game/qr-photo';
-            }
-
-        });
+        if (this.$btn) {
+            this.$btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isSupported = this.checkSupport(this.$deviceInfo.browser);
+                console.log('fnehfiekn');
+    
+                if (isSupported) {
+                    window.location.href = '/game/qr-reader';
+                } else {
+                    window.location.href = '/game/qr-photo';
+                }
+    
+            });
+        }
     }
 
     getSupportedBrowsers() {

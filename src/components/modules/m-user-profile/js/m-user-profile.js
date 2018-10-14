@@ -48,7 +48,6 @@ class UserProfile {
                 browser: setItems.browser,
                 os: setItems.os
             };
-            console.log(this.$browser);
         } else {
             for (let i = 0; i < 101; i++) {
                 this.$browserList.push('chrome' + i);
