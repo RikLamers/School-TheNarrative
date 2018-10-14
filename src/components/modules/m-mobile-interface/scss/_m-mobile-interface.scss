@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'mobile-interface';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    display: block;
+
+    @media (min-width: breakpoint-min(md)) {
+        display: none;
+    }
+
+    &__topbar {
+        @include rem(14);
+    }
+
+    &__dot {
+        height: 5px;
+        width: 5px;
+        background-color: #000;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    &__connection {
+        display: inline-block;
+        @include rem(10);
+    }
+
+    &__time {
+        text-align: center;
+    }
+
+    &__battery, &__progression {
+        float: right;
+        margin-left: 3px;
+    }
+
+    //CONTENT
+    &__content {
+
+    }
+
+    &__apps {
+        padding: 15px;
+    }
+
+}
