@@ -67,13 +67,12 @@ class UserProfile {
                     browser: this.checkDevice(this.$htmlClasses, this.$browserList),
                     os: this.checkDevice(this.$htmlClasses, this.$osList)
                 };
+                
+                localStorage.setItem('deviceInfo', JSON.stringify(this.$browser));
             }, 250);
 
-            localStorage.setItem('deviceInfo', JSON.stringify(this.$browser));
 
         }
-
-        localStorage.clear();
 
     }
 
