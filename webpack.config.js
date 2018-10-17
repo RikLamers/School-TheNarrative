@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/game/intro.html'
+			template: './views/game/whatsapp.html'
 		}),
 		new CopyWebpackPlugin([
 			{
