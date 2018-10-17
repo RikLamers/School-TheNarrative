@@ -191,6 +191,10 @@ const config = {
 			{
 				from: './assets/img/twitter.svg',
 				to: './img/'
+			},
+			{
+				from: './assets/img/iphone-bg.jpg',
+				to: './img/'
 			}
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
