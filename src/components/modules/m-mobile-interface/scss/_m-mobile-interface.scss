@@ -5,19 +5,26 @@
 ============================================================================= */
 
 $module-name: 'mobile-interface';
+$imageUrl: './assets/img/iphone-bg.png';
 
 /* =============================================================================
 	BASE
 ============================================================================= */
 
 .m-#{$module-name} {
+    background-image: url($imageUrl);
+    background-position: center center;
+    background-size: cover;
     display: block;
+    height: 700px;
+    position: relative;
 
     @media (min-width: breakpoint-min(md)) {
         display: none;
     }
 
     &__topbar {
+        padding: 0 15px;
         @include rem(14);
     }
 
@@ -50,6 +57,32 @@ $module-name: 'mobile-interface';
 
     &__apps {
         padding: 15px;
+
+        img {
+            margin: 0;
+        }
+
     }
+
+    // Hotbar
+    &__hotbar {
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask");
+    }
+
 
 }
