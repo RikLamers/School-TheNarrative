@@ -193,7 +193,7 @@ const config = {
 				to: './img/'
 			},
 			{
-				from: './assets/img/iphone-bg.jpg',
+				from: './assets/img/iphone-bg.png',
 				to: './img/'
 			}
 		]),
