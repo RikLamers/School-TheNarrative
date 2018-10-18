@@ -95,6 +95,8 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+# ignore public folder
+/public/
 
 
 # End of https://www.gitignore.io/api/node,wordpress
