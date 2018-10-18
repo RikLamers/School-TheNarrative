@@ -5,12 +5,32 @@
 ============================================================================= */
 
 $module-name: 'whatsapp';
-$imageUrl: './assets/img/iphone-bg.png';
+$imageUrl: './assets/img/whatsappbg.png';
 
 /* =============================================================================
 	BASE
 ============================================================================= */
 
 .m-#{$module-name} {
+  background-image: url($imageUrl);
+  background-size: cover;
+  display: block;
+  height: 100vh;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+
+  .whatsapp-header {
+    background: white;
+    .whatsapp-back {
+
+    }
+    .whatsapp-photo {
+
+    }
+    .whatsapp-name {
+
+    }
+  }
 
 }
