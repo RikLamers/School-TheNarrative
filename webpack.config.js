@@ -195,7 +195,11 @@ const config = {
 			{
 				from: './assets/img/iphone-bg.png',
 				to: './img/'
-			}
+			},
+            {
+                from: './assets/img/whatsapp-header/back.png',
+                to: './img/'
+            }
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendors'
