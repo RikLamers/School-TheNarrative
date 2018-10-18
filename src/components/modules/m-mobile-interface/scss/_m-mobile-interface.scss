@@ -58,7 +58,12 @@ $imageUrl: './assets/img/iphone-bg.png';
     }
 
     &__apps {
-        padding: 15px;
+        padding: 0 4px;
+        min-width: 50px;
+        min-height: 50px;
+        max-width: 75px;
+        max-height: 75px;
+        margin-top: 2px;
 
         img {
             margin: 0;
