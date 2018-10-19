@@ -12,32 +12,47 @@ $imageUrl: './assets/img/whatsappbg.png';
 ============================================================================= */
 
 .m-#{$module-name} {
-  background-image: url($imageUrl);
-  background-size: cover;
-  display: block;
-  height: 100vh;
-  position: relative;
-  margin: 0px;
-  padding: 0px;
+	background-image: url($imageUrl);
+	background-size: cover;
+	display: block;
+	height: 100vh;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
 
-  &__header {
-    background: white;
-    display:table-cell;
+	// Header
+	&__header {
+		background: white;
+		height: 150px;
+	}
 
-    .m-whatsapp__back {
+	&__back {
 
-      .m-whatsapp__back-img {
-        width: 40%;
-      }
-    }
-    .m-whatsapp__photo {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-    }
-    .whatsapp-name {
+		&-img {
+			width: 40%;
+		}
+		
+	}
 
-    }
-  }
+	&__photo {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		line-height: 150px;
+	}
+
+	&__name {
+		line-height: 150px;
+	}
+
+	// Body
+	&__body {
+
+	}
+
+	// chatbar
+	&__chatbar {
+
+	}
 
 }
