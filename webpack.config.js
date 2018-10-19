@@ -199,6 +199,10 @@ const config = {
             {
                 from: './assets/img/whatsapp-header/back.png',
                 to: './img/whatsapp-header/'
+            },
+            {
+                from: './assets/img/whatsapp-header/pope.jpg',
+                to: './img/whatsapp-header/'
             }
 		]),
 		new webpack.optimize.CommonsChunkPlugin({

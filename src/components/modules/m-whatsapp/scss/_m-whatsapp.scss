@@ -22,11 +22,18 @@ $imageUrl: './assets/img/whatsappbg.png';
 
   &__header {
     background: white;
-    .whatsapp-back {
+    display:table-cell;
 
+    .m-whatsapp__back {
+
+      .m-whatsapp__back-img {
+        width: 40%;
+      }
     }
-    .whatsapp-photo {
-
+    .m-whatsapp__photo {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
     }
     .whatsapp-name {
 
