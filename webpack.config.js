@@ -203,7 +203,15 @@ const config = {
             {
                 from: './assets/img/whatsapp-header/pope.jpg',
                 to: './img/whatsapp-header/'
-            }
+			},
+			{
+                from: './assets/img/whatsapp-header/phone.svg',
+                to: './img/whatsapp-header/'
+			},
+			{
+                from: './assets/img/whatsapp-header/cam.svg',
+                to: './img/whatsapp-header/'
+			}
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendors'
