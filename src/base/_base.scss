@@ -44,6 +44,7 @@ body {
 		'Segoe UI Symbol';
 	line-height: 1.5;
 	font-weight: 400;
+	overflow-x: hidden;
 	@include rem(16);
 
 	@media (min-width: breakpoint-min(md)) {

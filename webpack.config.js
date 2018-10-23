@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/game/intro.html'
+			template: './views/game/instagram.html'
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -207,6 +207,46 @@ const config = {
 			{
                 from: './assets/img/whatsapp-header/cam.svg',
                 to: './img/whatsapp-header/'
+			},
+			{
+				from: './assets/img/instagram/bookmark.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/comment.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/dm.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/filled_like.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/like.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/settings.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/instagram.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/camera.svg',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/instagrampost.png',
+				to: './img/instagram/'
+			},
+			{
+				from: './assets/img/instagram/profilepic.png',
+				to: './img/instagram/'
 			}
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
