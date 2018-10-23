@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/game/whatsapp.html'
+			template: './views/game/intro.html'
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -181,11 +181,7 @@ const config = {
 				to: './img/'
 			},
 			{
-				from: './assets/img/safari.svg',
-				to: './img/'
-			},
-			{
-				from: './assets/img/snapchat.svg',
+				from: './assets/img/whatsapp.svg',
 				to: './img/'
 			},
 			{
