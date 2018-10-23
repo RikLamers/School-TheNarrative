@@ -12,7 +12,8 @@ $imageUrl: './assets/img/iphone-bg.png';
 ============================================================================= */
 
 .m-#{$module-name} {
-    background-image: url($imageUrl);
+    background: #f3e5d6;
+    background: url(https://tst.riklamers.com/img/iphone-bg.png);
     background-position: center center;
     background-size: cover;
     display: block;
@@ -27,19 +28,22 @@ $imageUrl: './assets/img/iphone-bg.png';
 
     &__topbar {
         padding: 0 15px;
-        @include rem(14);
+        color: map-get($colors, white);
+        padding-bottom: 10px;
+        @include rem(12);
     }
 
     &__dot {
         height: 5px;
         width: 5px;
-        background-color: #000;
+        background-color: map-get($colors, white);
         border-radius: 50%;
         display: inline-block;
     }
 
     &__connection {
         display: inline-block;
+        margin-left: 5px;
         @include rem(10);
     }
 
@@ -58,15 +62,19 @@ $imageUrl: './assets/img/iphone-bg.png';
     }
 
     &__apps {
-        padding: 0 4px;
-        min-width: 50px;
-        min-height: 50px;
-        max-width: 75px;
-        max-height: 75px;
-        margin-top: 2px;
+        max-width: 68px;
+        margin: 0 auto;
+        padding: 5px;
+        text-align: center;
+        color: map-get($colors, white);
+        @include rem(12);
 
         img {
             margin: 0;
+        }
+
+        p {
+            margin-top: 3px;
         }
 
     }
@@ -75,6 +83,12 @@ $imageUrl: './assets/img/iphone-bg.png';
     &__hotbar {
         position: absolute;
         bottom: 0;
+        width: 100%;
+
+        .m-#{$module-name}__apps {
+            margin-top: 10px;
+        }
+
     }
 
     &__blur {
@@ -90,4 +104,10 @@ $imageUrl: './assets/img/iphone-bg.png';
     }
 
 
+}
+
+.andriod {
+    .m-#{$module-name} {
+        height: calc(100% - 50px);
+    }
 }
