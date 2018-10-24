@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/game/instagram.html'
+			template: './views/game/whatsapp.html'
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -199,15 +199,19 @@ const config = {
             {
                 from: './assets/img/whatsapp-header/pope.jpg',
                 to: './img/whatsapp-header/'
-			},
-			{
+            },
+            {
                 from: './assets/img/whatsapp-header/phone.svg',
                 to: './img/whatsapp-header/'
-			},
-			{
+            },
+            {
                 from: './assets/img/whatsapp-header/cam.svg',
                 to: './img/whatsapp-header/'
-			},
+            },
+            {
+                from: './assets/img/whatsapp-footer/chatbar.svg',
+                to: './img/whatsapp-footer/'
+            },
 			{
 				from: './assets/img/instagram/bookmark.svg',
 				to: './img/instagram/'
