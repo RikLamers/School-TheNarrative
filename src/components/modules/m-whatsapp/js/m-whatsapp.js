@@ -27,7 +27,9 @@ class WhatsApp {
     initialize() {
         this.setup();
         this.eventListeners();
-        this.displayText();
+        if (this.$holder) {
+            this.displayText();
+        }
     }
 }
 

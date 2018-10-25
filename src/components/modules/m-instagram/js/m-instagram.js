@@ -16,12 +16,35 @@ class Instagram {
 	}
 
     eventListeners() {
-        
-
-        this.$photo.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            this.$touchCounter++;
-            if (this.$touchCounter % 2 === 0 ) {
+        if (this.$holder) {
+            this.$photo.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                this.$touchCounter++;
+                if (this.$touchCounter % 2 === 0 ) {
+                    if (this.$liked) {
+                        this.$like.src = '/img/instagram/like.svg';
+                        this.$liked = false;
+                    } else {
+                        this.$like.src = '/img/instagram/like_filled.svg';
+                        this.$liked = true;
+                    }
+                }
+            });
+            
+            this.$photo.addEventListener('touchmove', (e) => {
+                const startTouch = e.changedTouches[0].clientY;
+    
+                if (startTouch > this.$lastY) {
+                    this.$body[0].scrollTop = this.$body[0].scrollTop - (startTouch - this.$lastY);
+                    this.$lastY = startTouch;
+                }else if (startTouch < this.$lastY) {
+                    this.$body[0].scrollTop = this.$body[0].scrollTop + (this.$lastY - startTouch);
+                    this.$lastY = startTouch;
+                }
+            });
+            
+            this.$like.addEventListener('touchstart', (e) => {
+                e.preventDefault();
                 if (this.$liked) {
                     this.$like.src = '/img/instagram/like.svg';
                     this.$liked = false;
@@ -29,31 +52,8 @@ class Instagram {
                     this.$like.src = '/img/instagram/like_filled.svg';
                     this.$liked = true;
                 }
-            }
-        });
-        
-        this.$photo.addEventListener('touchmove', (e) => {
-            const startTouch = e.changedTouches[0].clientY;
-
-            if (startTouch > this.$lastY) {
-                this.$body[0].scrollTop = this.$body[0].scrollTop - (startTouch - this.$lastY);
-                this.$lastY = startTouch;
-            }else if (startTouch < this.$lastY) {
-                this.$body[0].scrollTop = this.$body[0].scrollTop + (this.$lastY - startTouch);
-                this.$lastY = startTouch;
-            }
-        });
-        
-        this.$like.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            if (this.$liked) {
-                this.$like.src = '/img/instagram/like.svg';
-                this.$liked = false;
-            } else {
-                this.$like.src = '/img/instagram/like_filled.svg';
-                this.$liked = true;
-            }
-        });
+            });
+        }
     }
 
 	initialize() {
