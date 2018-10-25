@@ -11,21 +11,37 @@ $module-name: 'instagram';
 ============================================================================= */
 
 .m-#{$module-name} {
+    display: block;
+    width: 100%;
+
+    @media (min-width: breakpoint-min(md)) {
+        display: none;
+    }
 
     &__topbar {
-        height: 40px;
+        height: 60px;
         text-align: center;
-        line-height: 40px;
+        line-height: 60px;
         box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+        position: fixed;
+        width: 100vw;
+        background-color: map-get($colors, white);
+        z-index: 1;
 
         img {
             margin: 0;
+            width: 25px;
+        }
+
+        &--logo {
+            width: 100px!important;
         }
 
     }
 
     &__profilebar {
-        height: 40px;
+        height: 60px;
+        padding-top: 60px;
 
         img {
             margin: 0;
@@ -34,26 +50,27 @@ $module-name: 'instagram';
     }
 
     &__photocontainer {
-        text-align: right;
-        line-height: 40px;
+        text-align: center;
+        line-height: 60px;
     }
 
     &__profilepic {
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        height: 45px;
+        width: 45px;
     }
 
     &__profilemeta {
         padding-top: 7px;
+        margin-left: -15px;
 
         p {
             margin: 0;
             font-weight: bold;
-            @include rem(10);
+            @include rem(16);
 
             &:last-child {
-                @include rem(8);
+                @include rem(12);
             }
 
         }
@@ -62,21 +79,28 @@ $module-name: 'instagram';
 
     &__settings {
         text-align: center;
-        line-height: 40px;
+        line-height: 60px;
+
+        img {
+            width: 20px;
+        }
+
     }
 
     &__photo {
         img {
             margin: 0;
+            width: 100vw;
         }
     }
 
     &__interactbar {
-        text-align: center;
+        padding: 5px 0 0;
 
         img {
             margin: 0;
             padding: 0 5px;
+            width: 35px;
 
             &:last-child {
                 text-align: right;
@@ -84,6 +108,44 @@ $module-name: 'instagram';
 
         }
 
+    }
+
+    &__bookmark {
+        text-align: center;
+
+        img {
+            width: 30px;
+        }
+
+    }
+
+    &__description {
+        padding: 10px 10px 0;
+
+        p {
+            margin: 0;
+            @include rem(14);
+
+            i {
+                font-style: normal;
+                color: #5b7697;
+            }
+            
+        }
+
+        &--viewall {
+            color: map-get($colors, grayC);
+        }
+
+    }
+
+    &__meta {
+        p {
+            color: map-get($colors, grayC);
+            text-transform: uppercase;
+            @include rem(11);
+            padding: 5px 10px 0;
+        }
     }
 
 }
