@@ -173,84 +173,8 @@ const config = {
 				to: './js/vendors/'
 			},
 			{
-				from: './assets/img/facebook.svg',
+				from: './assets/img/',
 				to: './img/'
-			},
-			{
-				from: './assets/img/instagram.svg',
-				to: './img/'
-			},
-			{
-				from: './assets/img/whatsapp.svg',
-				to: './img/'
-			},
-			{
-				from: './assets/img/twitter.svg',
-				to: './img/'
-			},
-			{
-				from: './assets/img/iphone-bg.png',
-				to: './img/'
-			},
-            {
-                from: './assets/img/whatsapp/back.png',
-                to: './img/whatsapp/'
-            },
-            {
-                from: './assets/img/whatsapp/pope.jpg',
-                to: './img/whatsapp/'
-            },
-            {
-                from: './assets/img/whatsapp/phone.svg',
-                to: './img/whatsapp/'
-            },
-            {
-                from: './assets/img/whatsapp/cam.svg',
-                to: './img/whatsapp/'
-            },
-            {
-                from: './assets/img/whatsapp/chatbar.svg',
-                to: './img/whatsapp/'
-            },
-			{
-				from: './assets/img/instagram/bookmark.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/comment.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/dm.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/filled_like.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/like.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/settings.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/instagram.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/camera.svg',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/instagrampost.png',
-				to: './img/instagram/'
-			},
-			{
-				from: './assets/img/instagram/profilepic.png',
-				to: './img/instagram/'
 			}
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
