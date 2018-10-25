@@ -5,6 +5,29 @@
     <title>Title</title>
 </head>
 <body>
+    <div class="m-mobile-interface__topbar">
+        <div class="l-row">
+            <div class="l-col-4">
+                <div class="m-mobile-interface__dot"></div>
+                <div class="m-mobile-interface__dot"></div>
+                <div class="m-mobile-interface__dot"></div>
+                <div class="m-mobile-interface__dot"></div>
+                <div class="m-mobile-interface__dot"></div>
+                <div class="m-mobile-interface__connection">
+                    <i class="fas fa-wifi"></i>
+                </div>
+            </div>
+            <div class="l-col-4">
+                <div class="m-mobile-interface__time">Time</div>
+            </div>
+            <div class="l-col-4">
+                <div class="m-mobile-interface__battery">
+                    <i class="fas fa-battery-empty"></i>
+                </div>
+                <div class="m-mobile-interface__progression">%</div>
+            </div>
+        </div>
+    </div>
     <div class="m-whatsapp">
         <div class="l-row">
             <div class="m-whatsapp__header">
@@ -20,7 +43,7 @@
                 </div>
                 <div class="l-col-6">
                     <div class="m-whatsapp__name">
-                        Bisschop Bastegeziech
+                        Priester Batsegeziech
                     </div>
                 </div>
                 <div class="l-col-1">
@@ -36,10 +59,24 @@
             </div>
         </div>
         <div class="m-whatsapp__body">
+            <div class="m-whatsapp__wrapper">
+                <div class="m-whatsapp__wrapper-bubble">
+                    <div id="recieved_txt" class="m-whatsapp__txt">
 
+                    </div>
+                    <div class="m-whatsapp__bubble-arrow"></div>
+                </div>
+                <div class="m-whatsapp__wrapper-bubble alt">
+                    <div class="m-whatsapp__txt">
+                        <p class="m-whatsapp__message">Rinalda kom je neeeeuken</p>
+                        <span class="m-whatsapp__timestamp">10:22 pm</span>
+                    </div>
+                    <div class="m-whatsapp__bubble-arrow alt"></div>
+                </div>
+            </div>
         </div>
         <div class="m-whatsapp__chatbar">
-            <img src="/img/whatsapp/chatbar.svg">
+            <img class="m-whatsapp__chatbar-img" src="/img/whatsapp/chatbar.svg">
         </div>
     </div>
 </body>
