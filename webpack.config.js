@@ -193,24 +193,24 @@ const config = {
 				to: './img/'
 			},
             {
-                from: './assets/img/whatsapp-header/back.png',
-                to: './img/whatsapp-header/'
+                from: './assets/img/whatsapp/back.png',
+                to: './img/whatsapp/'
             },
             {
-                from: './assets/img/whatsapp-header/pope.jpg',
-                to: './img/whatsapp-header/'
+                from: './assets/img/whatsapp/pope.jpg',
+                to: './img/whatsapp/'
             },
             {
-                from: './assets/img/whatsapp-header/phone.svg',
-                to: './img/whatsapp-header/'
+                from: './assets/img/whatsapp/phone.svg',
+                to: './img/whatsapp/'
             },
             {
-                from: './assets/img/whatsapp-header/cam.svg',
-                to: './img/whatsapp-header/'
+                from: './assets/img/whatsapp/cam.svg',
+                to: './img/whatsapp/'
             },
             {
-                from: './assets/img/whatsapp-footer/chatbar.svg',
-                to: './img/whatsapp-footer/'
+                from: './assets/img/whatsapp/chatbar.svg',
+                to: './img/whatsapp/'
             },
 			{
 				from: './assets/img/instagram/bookmark.svg',
