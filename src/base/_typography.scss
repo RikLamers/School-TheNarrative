@@ -3,10 +3,11 @@
 /* =============================================================================
 CONFIG
 ============================================================================= */
+$font-family--header: $trattatello !global;
 
-$font-family--primary: $sourceSansPro !global;
+$font-family--primary: $baskerville !global;
 
-$font-family--secondary: $poppins--bold !global;
+$font-family--secondary: $opensans !global;
 
 $marked-bg-color: #fcf899;
 $content-spacing: 3rem;
@@ -19,6 +20,10 @@ BASE
 ============================================================================= */
 body {
 	font-family: $font-family--primary;
+}
+
+.meropedia {
+	font-family: $font-family--secondary;
 }
 
 p {
@@ -45,7 +50,7 @@ h6 {
 	font-weight: normal;
 	//font-weight: bold;
 	word-wrap: break-word;
-	font-family: $font-family--primary;
+	font-family: $font-family--header;
 	margin: $content-spacing 0 $content-spacing--small 0;
 	color: map-get($colors, primary);
 }
