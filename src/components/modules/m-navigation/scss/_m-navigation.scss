@@ -6,8 +6,6 @@
 
 $module-name: 'navigation';
 
-$slashUrl: './assets/img/slash.svg';
-
 /* =============================================================================
 	BASE
 ============================================================================= */
@@ -33,13 +31,13 @@ $slashUrl: './assets/img/slash.svg';
 		margin: 0;
 		margin-top: 50px;
 
-		@media (min-width: breakpoint-min(sm)) {
-			display: block;
-			margin-top: 0;
-			text-align: right;
-			height: auto;
-			width: 100%;
-		}
+		// @media (min-width: breakpoint-min(sm)) {
+		// 	display: block;
+		// 	margin-top: 0;
+		// 	text-align: right;
+		// 	height: auto;
+		// 	width: 100%;
+		// }
 
 		&.is--active {
 			display: block;
@@ -51,10 +49,10 @@ $slashUrl: './assets/img/slash.svg';
 		text-align: center;
 		padding: 20px 0;
 
-		@media (min-width: breakpoint-min(sm)) {
-			padding: 10px 20px;
-			display: inline-block;
-		}
+		// @media (min-width: breakpoint-min(sm)) {
+		// 	padding: 10px 20px;
+		// 	display: inline-block;
+		// }
 
 		a {
 			padding: 20px 0;
