@@ -9,16 +9,16 @@ CONFIG
 
 $object-name: 'btn';
 $button-font-family: $font-family--primary;
-$button-font-weight: normal;
+$button-font-weight: 600;
 $button-background--primary: map-get($colors, primary);
-$button-font-color--primary: map-get($colors, white);
+$button-font-color--primary: choose-contrast-color($button-background--primary);
 $button-background--secondary: map-get($colors, secondary);
-$button-font-color--secondary: map-get($colors, white);
-$button-radius: 20px;
+$button-font-color--secondary: choose-contrast-color($button-background--secondary);
+$button-radius: 5px;
 $border-radius-rounded: 25px;
 $button-padding-xs: 1rem 1.5rem;
-$button-padding: 1rem 2.5rem;
-$button-padding-xl: 1.5rem 3rem;
+$button-padding: 1rem 3rem;
+$button-padding-xl: 1.5rem 4.5rem;
 $button-border-width: 1px;
 $button-border-style: solid;
 $button-border-color: transparent;
@@ -28,7 +28,7 @@ BASE
 ============================================================================= */
 
 %button-base {
-	color: $button-font-color--primary;
+	color: $button-font-color--primary!important;
 	display: inline-block;
 	margin: 0;
 	font-weight: $button-font-weight;
@@ -59,25 +59,39 @@ BASE
 		filter: saturate(150%);
 	}
 
+	&:hover {
+		text-decoration: none;
+	}
+
 	&::-moz-focus-inner {
 		border: none;
 	}
+}
+
+%button-disabled {
+	cursor: not-allowed;
+	opacity: 0.3;
 }
 
 // Default button
 .o-#{$object-name} {
 	padding: $button-padding;
 	@extend %button-base;
-	@include rem(16);
+	@include rem(18);
+
+	&.o-btn--disabled,
+	&:disabled {
+		@extend %button-disabled;
+	}
 
 	&--ghost {
-		color: $button-background--primary;
-		background-color: map-get($colors, white);
-		border: 2px $button-border-style $button-background--primary;
+		color: $button-background--primary!important;
+		background-color: transparent;
+		border: 2px $button-border-style map-get($colors, white);
 
 		&:hover {
-			color: darken($button-background--primary, 10%);
-			border-color: darken($button-background--primary, 10%);
+			color: map-get($colors, black)!important;
+			border-color: map-get($colors, white);
 			background-color: map-get($colors, white);
 		}
 	}
@@ -94,13 +108,17 @@ BASE
 	padding: $button-padding-xl;
 	@extend %button-base;
 	@include rem(20);
-	height: 60px;
-	@include border-radius(30px);
+}
+
+.o-#{$object-name}--block {
+	display: block;
+	width: 100%;
+	text-align: center;
 }
 
 // Button type variations
 .o-#{$object-name}--primary {
-	color: $button-font-color--primary;
+	color: $button-font-color--primary!important;
 	background: $button-background--primary;
 
 	&:hover {
@@ -110,7 +128,7 @@ BASE
 }
 
 .o-#{$object-name}--secondary {
-	color: $button-font-color--secondary;
+	color: $button-font-color--secondary!important;
 	background: $button-background--secondary;
 
 	&:hover {
@@ -160,5 +178,10 @@ button {
 	&:hover {
 		color: choose-contrast-color(darken($button-background--primary, 10%));
 		background-color: darken($button-background--primary, 10%);
+	}
+
+	&.o-btn--disabled,
+	&:disabled {
+		@extend %button-disabled;
 	}
 }
