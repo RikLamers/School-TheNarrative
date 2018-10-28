@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$trattatello: 'Trattatello Regular';
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+@font-face {
+    font-family: $trattatello;
+    src: url($file-path-fonts + 'Trattatello/Trattatello.eot');
+    src: url($file-path-fonts + 'Trattatello/Trattatello.eot?#iefix') format('embedded-opentype'),
+        url($file-path-fonts + 'Trattatello/Trattatello.woff2') format('woff2'),
+        url($file-path-fonts + 'Trattatello/Trattatello.woff') format('woff'),
+        url($file-path-fonts + 'Trattatello/Trattatello.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
