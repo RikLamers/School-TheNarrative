@@ -7,8 +7,8 @@
 $module-name: 'heroimage';
 
 $imageUrl: './assets/img/heroimage.gif';
-$imageLeft: './assets/img/beleef.jpg';
-$imageRight: './assets/img/ontdek.jpg';
+$imageLeft: './assets/img/beleef.svg';
+$imageRight: './assets/img/ontdek.svg';
 
 /* =============================================================================
 	BASE
@@ -27,21 +27,30 @@ $imageRight: './assets/img/ontdek.jpg';
     overflow-y: scroll;
     color: map-get($colors, white);
 
-    h1, h2, h3, a {
+    h1, h2, h3 {
         text-align: center;
         color: map-get($colors, white)!important;
+        text-transform: uppercase;
     }
 
     &__content {
-        padding: 50px 0;
+        padding: 50px 0 100px;
+
+        @media (min-width: breakpoint-min(md)) {
+            padding-bottom: 50px;
+        }
     }
 
     &__img {
         width: 100%;
-        height: 400px;
+        height: 290px;
         background-size: cover;
         background-position: center center;
         position: relative;
+
+        @media (min-width: breakpoint-min(lg)) {
+            height: 400px;
+        }
 
         &--left {
             background-image: url($imageLeft);
