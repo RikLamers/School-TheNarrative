@@ -29,13 +29,11 @@ class Navigation {
 	toggleNav() {
 		if (this.$mobileNavIsVisibile) {
 			this.$navButton.classList.remove('is--active');
-			// this.$body.classList.remove('overflow-hidden-mobile');
 			this.$mobileNavIsVisibile = false;
 			this.$navList.classList.remove('is--active');
 
 		} else {
 			this.$navButton.classList.add('is--active');
-			// this.$body.classList.add('overflow-hidden-mobile');
 			this.$mobileNavIsVisibile = true;
 			this.$navList.classList.add('is--active');
 		}
