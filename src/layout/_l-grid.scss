@@ -12,6 +12,7 @@ DESCRIPTION: Set the container width, and override it for fixed navbars in media
 ============================================================================= */
 
 .l-container {
+    position: relative;
     max-width: $container-maxwidth;
     @include make-container();
 }
