@@ -16,7 +16,8 @@ $module-name: 'navigation';
 	button {
 		position: absolute;
 		top: 0px;
-		right: 10px
+		right: 10px;
+		z-index: 1;
 	}
 
 	&__list {
@@ -29,15 +30,9 @@ $module-name: 'navigation';
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		margin-top: 50px;
+		padding-top: 50px;
+		background-color: rgba(0, 0, 0, .7);
 
-		// @media (min-width: breakpoint-min(sm)) {
-		// 	display: block;
-		// 	margin-top: 0;
-		// 	text-align: right;
-		// 	height: auto;
-		// 	width: 100%;
-		// }
 
 		&.is--active {
 			display: block;
