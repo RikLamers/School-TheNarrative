@@ -22,10 +22,6 @@ body {
 	font-family: $font-family--primary;
 }
 
-.meropedia {
-	font-family: $font-family--secondary;
-}
-
 p {
 	margin-top: 0;
 	margin-bottom: $content-spacing--small;
@@ -53,6 +49,26 @@ h6 {
 	font-family: $font-family--header;
 	margin: $content-spacing 0 $content-spacing--small 0;
 	color: map-get($colors, primary);
+}
+
+.meropedia {
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6,
+	.p,
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: map-get($colors, gray3);
+		font-family: $font-family--secondary;
+	}
 }
 
 .h1,
