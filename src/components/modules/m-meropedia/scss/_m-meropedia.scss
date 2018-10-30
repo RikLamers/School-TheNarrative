@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'meropedia';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    padding-bottom: 50px;
+
+    &__subtitle {
+        border-top: 2px solid map-get($colors, grayC);
+        border-bottom: 2px solid map-get($colors, grayC);
+        padding: 20px 0;
+        margin-bottom: 50px;
+    }
+
+    &__footer {
+        width: 200px;
+        margin: 0;
+        padding: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+
+}
