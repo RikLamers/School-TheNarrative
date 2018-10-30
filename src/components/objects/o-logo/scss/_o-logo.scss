@@ -7,7 +7,8 @@ CONFIG
 $object-name: 'logo';
 $logo-width: 200px;
 $logo-height: 50px;
-// $logo-img-url: './assets/img/logo.svg';
+$logo-home: './assets/img/home-logo.svg';
+$logo-meropedia: './assets/img/meropedia-logo.svg';
 $logo-img-width--mobile: 100px;
 $logo-img-height--mobile: 25px;
 $logo-img-width--medium: 140px;
@@ -19,10 +20,34 @@ $logo-img-height: 50px;
 BASE
 ============================================================================= */
 
+.meropedia {
+
+	.o-#{$object-name} {
+		width: $logo-img-width--medium;
+		height: $logo-img-height--medium;
+		background: url($logo-meropedia);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		display: inline-block;
+
+		@media (min-width: breakpoint-min(sm)) {
+			width: $logo-img-width--medium;
+			height: $logo-img-height--medium;
+		}
+
+		@media (min-width: breakpoint-min(lg)) {
+			width: $logo-img-width;
+			height: $logo-img-height;
+		}
+	}
+
+}
+
 .o-#{$object-name} {
 	width: $logo-img-width--medium;
 	height: $logo-img-height--medium;
-	// background: url($logo-img-url);
+	background: url($logo-home);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
