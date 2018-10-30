@@ -11,13 +11,18 @@ $module-name: 'meropedia';
 ============================================================================= */
 
 .m-#{$module-name} {
-    padding-bottom: 50px;
+    padding-bottom: 75px;
 
     &__subtitle {
         border-top: 2px solid map-get($colors, grayC);
         border-bottom: 2px solid map-get($colors, grayC);
         padding: 20px 0;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
+
+        @media (min-width: breakpoint-min(md)) {
+            margin-bottom: 50px
+        }
+
     }
 
     &__footer {
