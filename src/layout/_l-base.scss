@@ -102,3 +102,10 @@ body {
 .block-scroll {
 	overflow: hidden;
 }
+
+.meropedia {
+	#l-header, #l-footer {
+		background-color: map-get($colors, grayD);
+	}
+
+}
