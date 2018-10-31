@@ -175,7 +175,11 @@ const config = {
 			{
 				from: './assets/img/',
 				to: './img/'
-			}
+			},
+            {
+                from: './assets/sounds/',
+                to: './sounds/'
+            }
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendors'
