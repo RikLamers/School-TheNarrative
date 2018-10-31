@@ -62,17 +62,20 @@ $imageUrl: './assets/img/whatsappbg.png';
     font-size: 2.6em;
     font-weight: 500;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    #online {font-size: 0.8em;font-weight: 300;position: absolute;top: 45px;}
+    #typing {font-size: 0.8em;font-weight: 300;position: absolute;top: 45px;}
   }
 
   // Body
   &__body {
     margin: 0px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   &__wrapper {
     padding: 30px 40px;
     &-bubble {
-      width: 75%;
+      width: 70%;
       height: auto;
       display: block;
       background: #fff;
@@ -83,6 +86,14 @@ $imageUrl: './assets/img/whatsappbg.png';
         margin: 0 0 0 60px;
         background: #d5f9c0;
         float: right;
+      }
+      &.answer-choices {
+        margin: 0 0 0 60px;
+        background: #d5f9c0;
+        float: right;
+        position: absolute;
+        bottom: 150px;
+        right: 40px;
       }
     }
   }
@@ -105,7 +116,7 @@ $imageUrl: './assets/img/whatsappbg.png';
   }
 
   &__timestamp{
-    font-size: 1.3em;
+    font-size: 1.6em;
     position: absolute;
     bottom: 8px;
     right: 10px;
@@ -151,4 +162,41 @@ $imageUrl: './assets/img/whatsappbg.png';
     }
   }
 
+  &__choicewrap {
+    width: 560px;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    left: 125px;
+    background: #fbfafa;
+    border: 1px solid grey;
+    border-radius: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  &__choice {
+    height: auto;
+    width: 550px;
+    margin: 0 auto;
+    background: yellow;
+    .antwoord {height: auto; font-size: 1.8em; margin-left: 20px; display: block; float: left; line-height: 80px; }
+    .lees {height: 60px; width: 65%; font-size: 1.8em; margin: 10px; display: block; float: right; line-height: 60px; text-align: center; border-radius: 15px; background: #0079ff; color: white;}
+  }
+
+  &__answer {
+    height: auto;
+    width: 530px;
+    float: right;
+    color: black;
+    padding: 15px;
+    font-size: 2em;
+    margin: 10px;
+    display: none;
+    background: #d5f9c0;
+    border-radius: 20px;
+  }
+
+  // show hide margin
+  .show {display: block;}
+  .hide {display: none;}
 }
