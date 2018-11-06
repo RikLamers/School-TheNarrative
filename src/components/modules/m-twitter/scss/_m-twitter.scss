@@ -6,10 +6,177 @@
 
 $module-name: 'twitter';
 
+$profile-pic: './assets/img/instagram/profilepic.png';
+
 /* =============================================================================
 	BASE
 ============================================================================= */
 
 .m-#{$module-name} {
+	font-family: $font-family--secondary;
+	display: block;
+
+	@media (min-width: breakpoint-min(sm)) {
+		display: none;
+	}
+
+	// Header SCSS
+
+	&__header {
+		height: 50px;
+		width: 100%;
+		border-bottom: 1px solid map-get($colors, grayE);
+		background-color: map-get($colors, white);
+		position: fixed;
+		z-index: 1;
+
+		.fa-angle-left {
+			height: 50px;
+			line-height: 50px;
+			display: block;
+			margin: 0 auto;
+			@include rem(30);
+			color: map-get($colors, twitterblue);
+		}
+
+		p {
+			text-align: center;
+			line-height: 50px;
+			font-weight: bold;
+			@include rem(20);
+		}
+
+	}
+
+	&__content {
+		height: 100%;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+
+	// Profile SCSS
+
+	&__profile, &__comments {
+		padding-top: 60px;
+
+		&--name {
+			font-weight: bold;
+			@include rem(14);
+			padding-top: 5px;
+		}
+
+		&--handle {
+			color: map-get($colors, gray6);
+			@include rem(14);
+		}
+
+		.fa-angle-down {
+			float: right;
+			margin-right: 10px;
+			line-height: 50px;
+			height: 50px;
+			color: map-get($colors, grayC);
+		}
+
+	}
+
+	&__profilepic {
+		height: 50px;
+		width: 50px;
+		background-image: url($profile-pic);
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+	}
+
+	// Post SCSS
+
+	&__post {
+		margin-top: 20px;
+
+		i {
+			font-style: normal;
+			font-family: $font-family--secondary;
+			color: map-get($colors, twitterblue);
+		}
+
+		img {
+			border-radius: 10px;
+			margin: 0;
+		}
+
+	}
+
+	// Meta SCSS
+
+	&__meta {
+		padding: 10px 0;
+		border-bottom: 1px solid map-get($colors, grayE);
+
+		p {
+			color: map-get($colors, gray8);
+			margin: 0;
+			@include rem(14);
+		}
+
+	}
+
+	// Like SCSS
+
+	&__likes {
+		padding: 10px 0;
+		border-bottom: 1px solid map-get($colors, grayE);
+		@include rem(14);
+	}
+
+	&__like {
+		font-weight: bold;
+		display: inline-block;
+	}
+
+	// Interaction SCSS
+
+	&__interaction {
+		padding: 10px 0;
+		border-bottom: 1px solid map-get($colors, grayE);
+
+		div {
+			text-align: center;
+		}
+
+	}
+
+	// Comments SCSS
+
+	&__comments {
+		padding: 0;
+
+		p {
+			margin: 0;
+		}
+		
+	}
+
+	&__comment {
+		padding: 15px 0;
+		border-bottom: 1px solid map-get($colors, grayE);
+	}
+
+	&__reply {
+		margin-top: 20px;
+
+		i {
+			font-style: normal;
+			font-family: $font-family--secondary;
+			color: map-get($colors, twitterblue);
+		}
+
+		img {
+			border-radius: 10px;
+			margin: 0;
+		}
+
+	}
 
 }
