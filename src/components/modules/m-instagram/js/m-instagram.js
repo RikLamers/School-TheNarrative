@@ -9,10 +9,11 @@ class Instagram {
 		this.$holder = document.getElementsByClassName('m-instagram')[0];
         this.$photo = document.getElementsByClassName('m-instagram__photo')[0];
         this.$like = document.getElementsByClassName('m-instagram__like')[0];
-        this.$body = document.getElementsByTagName('body');
+        this.$body = document.getElementsByTagName('body')[0];
         this.$touchCounter = 0;
         this.$liked = false;
         this.$lastY = 0;
+        this.$chapter = this.$body.getAttribute('data-id');
 	}
 
     eventListeners() {
