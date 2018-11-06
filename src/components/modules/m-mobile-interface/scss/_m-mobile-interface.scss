@@ -21,6 +21,7 @@ $imageUrl: './assets/img/iphone-bg.png';
     min-height: 568px;
     max-height: 812px;
     position: relative;
+    font-family: $font-family--secondary;
 
     @media (min-width: breakpoint-min(md)) {
         display: none;
@@ -53,7 +54,14 @@ $imageUrl: './assets/img/iphone-bg.png';
 
     &__battery, &__progression {
         float: right;
-        margin-left: 3px;
+        margin-left: 5px;
+    }
+
+    &__battfiller {
+        position: absolute;
+        height: 6.5px;
+        background: white;
+        margin-top: 5.5px;
     }
 
     //CONTENT
