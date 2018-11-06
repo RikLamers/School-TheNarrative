@@ -18,7 +18,6 @@ class CheckQR {
             this.$btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 const isSupported = this.checkSupport(this.$deviceInfo.browser);
-                console.log('fnehfiekn');
     
                 if (isSupported) {
                     window.location.href = '/game/qr-reader';
