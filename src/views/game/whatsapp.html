@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Chapter 1</title>
 </head>
-<body>
+<body class="block-scroll">
     <!--<div class="m-mobile-interface__topbar">-->
         <!--<div class="l-row">-->
             <!--<div class="l-col-4">-->
@@ -33,12 +33,12 @@
             <div class="m-whatsapp__header">
                 <div class="l-col-1">
                     <div class="m-whatsapp__back">
-                        <img class="m-whatsapp__back-img" src="/img/whatsapp/back.png">
+                        <img id="back-btn" class="m-whatsapp__back-img" src="/img/whatsapp/back.png">
                     </div>
                 </div>
                 <div class="l-col-2">
                     <div class="m-whatsapp__photo">
-                        <img class="m-whatsapp__photo-img" src="/img/whatsapp/priest.png">
+                        <img id="app-img" class="m-whatsapp__photo-img" src="/img/whatsapp/priest.png">
                     </div>
                 </div>
                 <div class="l-col-6">
@@ -63,6 +63,9 @@
         <div class="m-whatsapp__body">
             <div id="bubble-wrapper" class="m-whatsapp__wrapper"></div>
         </div>
+
+        <img id="app-img-enlarged" class="hide" src="/img/whatsapp/priest.png">
+
         <div class="m-whatsapp__chatbar">
             <img class="m-whatsapp__chatbar-img" src="/img/whatsapp/chatbar.svg">
             <div class="m-whatsapp__choicewrap hide">
