@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'drag-drop';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+
+    &__correct {
+        height: 125px;
+        width: 100%;
+        border: 1px solid black;
+
+        &--spot {
+            height: 75px;
+            width: 75px;
+            border: 1px dashed black;
+            display: block;
+            margin: 0 auto;
+            margin-top: 25px;
+        }
+
+    }
+
+    &__items {
+
+        img {
+            height: 75px;
+            width: 75px;
+            margin: 0;
+            position: absolute;
+        }
+
+    }
+
+}
