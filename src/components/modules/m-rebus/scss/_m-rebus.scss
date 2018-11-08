@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'rebus';
+
+$perkament-bg: './assets/img/perkament-bg.jpg';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	height: 100%;
+	width: 100%;
+	background-image: url($perkament-bg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	&__content {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+
+	&__img {
+		margin: 10px 0;
+	}
+
+	&__answer {
+		text-align: center;
+		color: map-get($colors, black);
+
+		input[type='text'] {
+			border: 1px solid map-get($colors, black);
+			background-color: transparent;
+			text-align: center;
+			width: 100px;
+			display: block;
+			margin: 10px auto 25px;
+
+			// &::placeholder {
+			// 	color: map-get($colors, black);
+			// }
+		}
+
+		button {
+			background-color: transparent;
+			border: 1px solid map-get($colors, black);
+		}
+
+	}
+
+}
