@@ -8,10 +8,21 @@ class WhatsApp {
     setup() {
         this.$holder = document.getElementsByClassName('m-whatsapp')[0];
         this.$body = document.getElementsByTagName('body')[0];
-        this.$chapter = this.$body.getAttribute('data-id');
+
+        // Get chapter
+        this.$storage = JSON.parse(localStorage.getItem('progression'));
+        this.$chapter = this.getChapter(this.$storage);
     }
 
     eventListeners() { }
+
+    getChapter(storage) {
+        for (let i = 0; i < storage.length; i++) {
+            if (storage[i].done === 0) {
+                return i + 1;
+            }
+        }
+    }
 
     displayText() {
         var bubbleWrap = document.getElementById("bubble-wrapper"),
