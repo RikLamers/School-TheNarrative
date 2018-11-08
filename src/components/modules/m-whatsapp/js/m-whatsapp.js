@@ -7,7 +7,8 @@ class WhatsApp {
 
     setup() {
         this.$holder = document.getElementsByClassName('m-whatsapp')[0];
-        this.$body = document.getElementsByTagName('body');
+        this.$body = document.getElementsByTagName('body')[0];
+        this.$chapter = this.$body.getAttribute('data-id');
     }
 
     eventListeners() { }
