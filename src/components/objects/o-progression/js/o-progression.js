@@ -57,7 +57,7 @@ class Progression {
         for (let i = 0; i < 11; i++) {
             this.$progression.push(structure);
         }
-        
+
         localStorage.setItem('progression', JSON.stringify(this.$progression));
     }
 
