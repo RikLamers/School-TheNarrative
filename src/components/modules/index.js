@@ -1,3 +1,4 @@
+export { default as DragDrop } from './m-drag-drop/js/m-drag-drop';
 export { default as Instagram } from './m-instagram/js/m-instagram';
 export { default as Navigation } from './m-navigation/js/m-navigation';
 export { default as MobileInterface } from './m-mobile-interface/js/m-mobile-interface';
