@@ -16,7 +16,9 @@ class Progression {
         this.$initialHref = window.location.href;
         if (window.performance.navigation.type === 1 || window.location.href !== this.$initialHref) {
             this.retrieveProgression();
-            this.checkProgressionBar();
+            if (this.$mobileInterface) {
+                this.checkProgressionBar();
+            }
         }
 	}
 
