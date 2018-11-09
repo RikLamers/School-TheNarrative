@@ -47,7 +47,6 @@ class DragDrop {
     endEvent(e) {
             const x = parseInt(e.target.style.left);
             const y = parseInt(e.target.style.top);
-            console.log(this.$correctBox);
             if (e.target.getAttribute('data-id') === 'correct') {
                 if (x < this.$correctBox.offsetWidth && x > 0 && y < this.$correctBox.offsetHeight && y > 0) {
                     e.target.style.left = `${((this.$correctBox.offsetWidth / this.$collectionCorrectLength) - e.target.offsetWidth) / 2 + (this.$correct * (this.$correctBox.offsetWidth / this.$collectionCorrectLength))}px`;
