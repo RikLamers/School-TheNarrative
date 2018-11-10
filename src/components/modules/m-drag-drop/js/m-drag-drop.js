@@ -11,14 +11,10 @@ class DragDrop {
         if (this.$holder) {
             this.$correctBox = document.getElementsByClassName('m-drag-drop__correct')[0];
     
-            // Element collection
+            // Element collection incl. images
             this.$collectionEl = document.getElementsByClassName('m-drag-drop__items');
             this.$collectionCorrectLength;
     
-            // get all dragable items
-            this.$whatsapp = document.getElementById('m-drag-drop__whatsapp');
-            this.$instagram = document.getElementById('m-drag-drop__instagram');
-            this.$facebook = document.getElementById('m-drag-drop__facebook');
             this.$width = window.innerWidth;
             this.$height = window.innerHeight;
             this.$offsetHeight = this.$correctBox.offsetHeight;
@@ -29,6 +25,7 @@ class DragDrop {
 
     eventListeners() {
 
+        // Add all eventlisteners to parent div of images
         for (let i = 0; i < this.$collectionEl.length; i++) {
             this.$collectionEl[i].addEventListener('touchmove', this.moveEvent);
             this.$collectionEl[i].addEventListener('touchend', this.endEvent.bind(this));
@@ -47,7 +44,6 @@ class DragDrop {
     endEvent(e) {
             const x = parseInt(e.target.style.left);
             const y = parseInt(e.target.style.top);
-            console.log(this.$correctBox);
             if (e.target.getAttribute('data-id') === 'correct') {
                 if (x < this.$correctBox.offsetWidth && x > 0 && y < this.$correctBox.offsetHeight && y > 0) {
                     e.target.style.left = `${((this.$correctBox.offsetWidth / this.$collectionCorrectLength) - e.target.offsetWidth) / 2 + (this.$correct * (this.$correctBox.offsetWidth / this.$collectionCorrectLength))}px`;
