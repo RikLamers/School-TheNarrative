@@ -44,6 +44,12 @@ class DragDrop {
     endEvent(e) {
             const x = parseInt(e.target.style.left);
             const y = parseInt(e.target.style.top);
+            
+            if (x < 0 || y < 0 || (x + e.target.offsetWidth) > this.$width || (y + e.target.offsetHeight) > this.$height) {
+                e.target.style.left = `${Math.floor(Math.random() * (this.$width - this.$offsetWidth))}px`;
+                e.target.style.top = `${Math.floor(Math.random() * (this.$height - (this.$offsetHeight * 2))) + this.$offsetHeight}px`;
+            }
+
             if (e.target.getAttribute('data-id') === 'correct') {
                 if (x < this.$correctBox.offsetWidth && x > 0 && y < this.$correctBox.offsetHeight && y > 0) {
                     e.target.style.left = `${((this.$correctBox.offsetWidth / this.$collectionCorrectLength) - e.target.offsetWidth) / 2 + (this.$correct * (this.$correctBox.offsetWidth / this.$collectionCorrectLength))}px`;
