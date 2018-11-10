@@ -15,8 +15,8 @@ class Rebus {
             this.$checkButton = document.getElementById('m-rebus__check');
             this.$stage = 1;
             this.$getAllimg = document.getElementsByClassName('m-rebus__img');
-            this.$rebusImg1 = ['/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg', '/img/facebook.svg'];
-            this.$rebusImg2 = ['/img/instagram.svg', '/img/instagram.svg', '/img/instagram.svg', '/img/instagram.svg', '/img/instagram.svg', '/img/instagram.svg'];
+            this.$rebusImg1 = ['/img/rebus/2-1.svg', '/img/rebus/2-2.svg', '/img/rebus/2-3.svg', '/img/rebus/2-4.svg', '/img/rebus/2-5.svg', '/img/rebus/2-6.svg', '/img/rebus/2-7.svg', '/img/rebus/2-8.svg', '/img/rebus/2-9.svg', '/img/rebus/2-10.svg', '/img/rebus/2-11.svg'];
+            this.$rebusImg2 = ['/img/rebus/3-1.svg', '/img/rebus/3-2.svg', '/img/rebus/3-3.svg', '/img/rebus/3-4.svg', '/img/rebus/3-5.svg', '/img/rebus/3-6.svg', '/img/rebus/3-7.svg', '/img/rebus/3-8.svg', '/img/rebus/3-9.svg', '/img/rebus/3-10.svg', '/img/rebus/3-11.svg', '/img/rebus/3-12.svg'];
         }
 	}
 
