@@ -13,6 +13,30 @@ $module-name: 'meropedia';
 .m-#{$module-name} {
     padding-bottom: 75px;
 
+    a {
+        color: map-get($colors, twitterblue);
+
+        &:hover {
+            color: darken(map-get($colors, twitterblue), 20%);
+        }
+
+        &:visited {
+            color: darken(map-get($colors, twitterblue), 20%);
+        }
+
+
+    }
+
+    i, ul, li {
+        font-family: $font-family--secondary;
+    }
+
+    p {
+        i {
+            @include rem(12);
+        }
+    }
+
     &__subtitle {
         border-top: 2px solid map-get($colors, grayC);
         border-bottom: 2px solid map-get($colors, grayC);
@@ -24,13 +48,48 @@ $module-name: 'meropedia';
         }
 
     }
+    
+    &__sources {
+        padding-bottom: 100px;
+
+        @media (min-width: breakpoint-min(sm)) {
+            padding-bottom: 25px;
+        }
+
+        a {
+            color: map-get($colors, twitterblue);
+            display: block;
+
+            &:hover {
+                color: darken(map-get($colors, twitterblue), 20%);
+            }
+
+            &:visited {
+                color: darken(map-get($colors, twitterblue), 20%);
+            }
+
+        }
+    }
 
     &__footer {
         width: 200px;
         margin: 0;
-        padding: 10px;
+        padding: 0;
         display: block;
         margin: 0 auto;
+
+        @media (min-width: breakpoint-min(sm)) {
+            padding-top: 15px;
+        }
+
+        a {
+            font-family: $font-family--secondary;
+            color: map-get($colors, black);
+            text-align: center;
+            display: inherit;
+            line-height: 60px;
+        }
+
     }
 
 }
