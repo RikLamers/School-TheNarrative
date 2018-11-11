@@ -50,7 +50,7 @@ class Rebus {
                     // place new img
                     for (let x = 0; x < this.$rebusImg1.length; x++) {
                         const div = document.createElement('div');
-                        div.className = 'l-col-3';
+                        div.className = 'l-col-4';
                         this.$container.appendChild(div);
                         const img = document.createElement('img');
                         img.className = 'm-rebus__img';
@@ -76,7 +76,7 @@ class Rebus {
                     // place new img
                     for (let x = 0; x < this.$rebusImg2.length; x++) {
                         const div = document.createElement('div');
-                        div.className = 'l-col-3';
+                        div.className = 'l-col-4';
                         this.$container.appendChild(div);
                         const img = document.createElement('img');
                         img.className = 'm-rebus__img';
