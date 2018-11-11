@@ -6,7 +6,7 @@
 
 $module-name: 'rebus';
 
-$perkament-bg: './assets/img/perkament-bg.jpg';
+$perkament-bg: './assets/img/perkament-bg.svg';
 
 /* =============================================================================
 	BASE
@@ -34,6 +34,7 @@ $perkament-bg: './assets/img/perkament-bg.jpg';
 	&__answer {
 		text-align: center;
 		color: map-get($colors, black);
+		padding-bottom: 25px; 
 
 		input[type='text'] {
 			border: 1px solid map-get($colors, black);
@@ -42,10 +43,6 @@ $perkament-bg: './assets/img/perkament-bg.jpg';
 			width: 100px;
 			display: block;
 			margin: 10px auto 25px;
-
-			// &::placeholder {
-			// 	color: map-get($colors, black);
-			// }
 		}
 
 		button {
