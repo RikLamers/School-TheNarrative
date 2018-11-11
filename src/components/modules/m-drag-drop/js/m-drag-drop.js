@@ -20,6 +20,16 @@ class DragDrop {
             this.$offsetHeight = this.$correctBox.offsetHeight;
             this.$offsetWidth = this.$collectionEl[0].firstChild.nextSibling.offsetWidth;
             this.$correct = 0;
+            
+            // Notification
+            this.$notification = document.getElementById('o-notification');
+            if (this.$notification) {
+                this.$notificationApp = document.getElementById('o-notification__app');
+                this.$notificationAppText = document.getElementById('o-notification__apptext');
+                this.$notificationFrom = document.getElementById('o-notification__from');
+                this.$notificationText = document.getElementById('o-notification__text');
+                this.$notificationLink = document.getElementById('o-notification__link');
+            }
         }
 	}
 
@@ -89,7 +99,14 @@ class DragDrop {
     }
 
     complete() {
-        console.log('GOEDZO');
+        this.$notificationApp.src = '/img/whatsapp.svg';
+        this.$notificationAppText.innerText = 'whatsapp';
+        this.$notificationFrom.innerText = 'Batsegeziech';
+        this.$notificationText.innerText = 'Lekker gewerkt pik! Ik heb je volgende opdracht! lees het hele appje.';
+        this.$notificationLink.href = 'https://www.google.com';
+        // setTimeout(() => {
+            this.$notification.className = 'o-notification o-notification--show';
+        // }, 2000);
     }
 
 	initialize() {
