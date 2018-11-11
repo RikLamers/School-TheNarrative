@@ -6,7 +6,7 @@
 
 $module-name: 'drag-drop';
 
-$perkament-bg: './assets/img/perkament-bg.jpg';
+$perkament-bg: './assets/img/perkament-bg.svg';
 
 /* =============================================================================
 	BASE
@@ -20,7 +20,7 @@ $perkament-bg: './assets/img/perkament-bg.jpg';
 	background-position: center center;
 	background-repeat: no-repeat;
 	overflow-y: scroll;
-	overflow-x: hidden;
+    overflow-x: hidden;
 
     &__correct {
         height: 125px;
