@@ -28,7 +28,7 @@ class Facebook {
 					accountImg: '/img/merovinger/pf.jpg',
 					post: 'MAASTRICHT – De afgelopen dagen deed zich het verhaal de rondte over een zwerver die meermaals bijna in de Maas zou zijn gevallen omdat hij niets zag. Nu blijkt zich een waar wonder te hebben voltrokken want de zwerver kan weer zien.',
 					postImg: '/img/merovinger/pf.jpg',
-					link: 'https://www.google.com',
+					link: '/merovinger/blinde-zwerver-kan-weer-zien.html',
 					likes: 'Jan Jansen en 5 andere',
 					shares: '1 share',
 					comments: [
@@ -55,7 +55,7 @@ class Facebook {
 					post: 'MAASTRICHT – Maastricht is in rep en roer omdat vannacht ogenschijnlijk de duivel is verschenen bij de kerk aan het Vrijthof. De duivel had het gemunt op de recent afgebouwde Christelijke kerk welke hij weer met de grond gelijk leek te willen maken. De weerloze kerk, en daarmee tevens de slapende stad werd dit leed echter bespaard door een heldendaad van Sint Servaas die dit met zijn leven heeft moeten bekopen.',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
-					link: 'https://www.google.com',
+					link: '/merovinger/sint-servaas-geeft-zijn-leven.html',
 					likes: 'Frederik en 51 andere',
 					shares: '14 shares',
 					comments: [
@@ -79,7 +79,7 @@ class Facebook {
 					post: 'MAASTRICHT – Sint Servaas mag dan wel zijn leven hebben gegeven voor de stad, nog steeds heeft zijn nalatenschap invloed op de levens van de Maastrichtenaren. Zo werd gekke Geis, zoals de dorpsgek in de volksmond wordt genoemd, uit onverwachtse hoek geholpen nadat hij al enkele dagen doelloos door de stad zwalkte.',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
-					link: 'https://www.google.com',
+					link: '/merovinger/sint-servaas-producten-zorgen-voor-wonder.html',
 					likes: 'Bastiaan en 67 andere',
 					shares: '11 shares',
 					comments: [
@@ -107,7 +107,7 @@ class Facebook {
 					post: 'MAASTRICHT – Bij een bijeenkomst, georganiseerd door Tjeu Das, is de Maastrichtse kerk ontmaskert. De aanwezige burgers, die in grote getalen zijn komen opdagen bij de uitkijktoren aan de Maas, waren getuigen van een schouwspel dat niemand van tevoren had kunnen bedenken. Tjeu Das maakte daar terplekke hoogstpersoonlijk korte metten met Sint Servaas.',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
-					link: 'https://www.google.com',
+					link: '/merovinger/ker-verzint-heilige.html',
 					likes: 'Rikkerdt en 121 andere',
 					shares: '21 shares',
 					comments: [
@@ -129,7 +129,7 @@ class Facebook {
 					post: 'MAASTRICHT – Bij een bijeenkomst, georganiseerd door Tjeu Das, is de vermiste sleutel van Sint Servaas opgedoken. De aanwezige burgers, die in grote getalen zijn komen opdagen bij de uitkijktoren aan de Maas, waren getuigen van een schouwspel dat niemand van tevoren had kunnen bedenken. Tjeu Das viel terplekke door de mand met zijn relaas en beschuldigingen aan het adres van Sint Servaas.',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
-					link: 'https://www.google.com',
+					link: '/merovinger/tjeu-das-blijkt-judas.html',
 					likes: 'Rikkerdt en 121 andere',
 					shares: '21 shares',
 					comments: [
