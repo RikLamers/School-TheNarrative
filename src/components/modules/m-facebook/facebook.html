@@ -5,22 +5,18 @@
                 <i class="fas fa-angle-left"></i>
             </div>
             <div class="l-col-2">
-                <div class="m-facebook__profilepic"></div>
+                <div id="m-facebook__profilepic" class="m-facebook__profilepic"></div>
             </div>
             <div class="l-col-6">
                 <div class="m-facebook__postdata">
                     <div class="l-row">
                         <div class="l-col-12">
-                            <div class="m-facebook__postdata--name">
-                                Sint Servaas
-                            </div>
+                            <div id="m-facebook__postdata--name" class="m-facebook__postdata--name"></div>
                         </div>
                     </div>
                     <div class="l-row">
                         <div class="l-col-12">
-                            <div class="m-facebook__postdata--timestamp">
-                                Vandaag om 12:00
-                            </div>
+                            <div id="m-facebook__postdata--timestamp" class="m-facebook__postdata--timestamp"></div>
                         </div>
                     </div>
                 </div>
@@ -36,13 +32,16 @@
         <div class="l-row">
             <div class="l-col-12">
                 <div class="l-container">
-                    <p>Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</p>
+                    <p id="m-facebook__posttext"></p>
+                    <a class="m-facebook__link" href="#">Lees meer</a>
                 </div>
             </div>
         </div>
         <div class="l-row">
             <div class="l-col-12">
-                <img src="/img/facebook/newspic.png" />
+                <a href="#" class="m-facebook__link">
+                    <img src="/img/facebook/newspic.png" />
+                </a>
             </div>
         </div>
     </div>
@@ -63,41 +62,17 @@
         <div class="m-facebook__likes">
             <div class="l-row">
                 <div class="l-col-12">
-                    <i class="far fa-thumbs-up"></i> Sintje en 100 andere
+                    <i class="far fa-thumbs-up"></i> <span id="m-facebook__likes"></span>
                 </div>
             </div>
         </div>
         <div class="m-facebook__shares">
             <div class="l-row">
                 <div class="l-col-12">
-                    10 shares
+                    <span id="m-facebook__shares"></span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="m-facebook__comments">
-        <div class="m-facebook__comment">
-            <div class="l-row">
-                <div class="l-col-3">
-                    <div class="m-facebook__comment--photo"></div>
-                </div>
-                <div class="l-col-9">
-                    <div class="m-facebook__comment--cloud">
-                        <div class="l-row">
-                            <div class="l-col-12">
-                                <div class="m-facebook__comment--name">
-                                    Jantje beton
-                                </div>
-                            </div>
-                        </div>
-                        <div class="l-row">
-                            <div class="l-col-12">
-                                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="m-facebook__comments" class="m-facebook__comments"></div>
 </div>
