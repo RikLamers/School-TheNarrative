@@ -13,9 +13,14 @@ $module-name: 'instagram';
 .m-#{$module-name} {
     display: block;
     width: 100%;
+    font-family: $font-family--secondary;
 
     @media (min-width: breakpoint-min(md)) {
         display: none;
+    }
+
+    strong, i {
+        font-family: $font-family--secondary;
     }
 
     &__topbar {
