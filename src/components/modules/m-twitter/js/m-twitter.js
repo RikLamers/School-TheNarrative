@@ -215,9 +215,6 @@ class Twitter {
 
 	placeRightText(chapter) {
 
-
-		console.log(this.$twitterInfo);
-
 		if (chapter === 3) {
 			if (this.$chapterStorage.twitter === 1) {
 				chapter = 10;
@@ -233,12 +230,6 @@ class Twitter {
 				chapter = 14;
 			}
 		}
-
-
-
-
-
-
 
 		if (this.$twitterInfo[chapter].tweet) {
 			const date = new Date();
