@@ -199,7 +199,7 @@ const config = {
 	devServer: {
 		contentBase: path.resolve(__dirname, 'public'),
 		compress: true,
-		port: 5000,
+		port: 3000,
 		quiet: true,
 		stats: 'errors-only',
 		open: true
