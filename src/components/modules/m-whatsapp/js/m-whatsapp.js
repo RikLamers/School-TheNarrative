@@ -87,6 +87,22 @@ class WhatsApp {
             }
         };
 
+        function showChoice(event) {
+            // console.log(event.target.nextElementSibling);
+            if (event.target.nextElementSibling.style.display === ''){
+                event.target.nextElementSibling.style.display = 'none';
+            }
+            if (event.target.nextElementSibling.style.display !== 'none') {
+                event.target.nextElementSibling.style.display = 'none';
+                event.target.innerHTML = "Lees volledige keuze";
+
+            } else {
+                choice.style.height = "auto";
+                event.target.nextElementSibling.style.display = 'block';
+                event.target.innerHTML = "Terug naar keuzes";
+            }
+        };
+
         // user komt op pagina, verhaal start hier
         setTimeout(function () { // EERSTE BERICHT
             // Batsegeziech komt online
