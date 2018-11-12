@@ -161,7 +161,7 @@ const config = {
 		}),
 		new HtmlWebpackPlugin(),
 		new HtmlWebpackPlugin({
-			template: './views/game/intro.html'
+			template: './views/game/whatsapp.html'
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -179,7 +179,11 @@ const config = {
             {
                 from: './assets/sounds/',
                 to: './sounds/'
-            }
+			},
+			{
+				from: './assets/video/',
+				to: './video/'
+			}
 		]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'vendors'
@@ -195,7 +199,7 @@ const config = {
 	devServer: {
 		contentBase: path.resolve(__dirname, 'public'),
 		compress: true,
-		port: 3000,
+		port: 5000,
 		quiet: true,
 		stats: 'errors-only',
 		open: true
