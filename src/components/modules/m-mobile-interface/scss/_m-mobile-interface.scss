@@ -12,22 +12,28 @@ $imageUrl: './assets/img/iphone-bg.png';
 ============================================================================= */
 
 .m-#{$module-name} {
-    background: #f3e5d6;
-    background: url(https://tst.riklamers.com/img/iphone-bg.png);
-    background-position: center center;
-    background-size: cover;
-    display: block;
-    height: 100%;
-    min-height: 568px;
-    max-height: 812px;
-    position: relative;
     font-family: $font-family--secondary;
 
     @media (min-width: breakpoint-min(md)) {
         display: none;
     }
 
+    &__bg {
+        background: #f3e5d6;
+        background: url(https://tst.riklamers.com/img/iphone-bg.png);
+        background-position: center center;
+        background-size: cover;
+        display: block;
+        height: 100%;
+        min-height: 568px;
+        max-height: 812px;
+        position: relative;
+    }
+
     &__topbar {
+        position: fixed;
+        width: 100%;
+        font-family: $font-family--secondary;
         padding: 0 15px;
         color: map-get($colors, white);
         padding-bottom: 10px;
@@ -66,7 +72,7 @@ $imageUrl: './assets/img/iphone-bg.png';
 
     //CONTENT
     &__content {
-
+        padding-top: 25px;
     }
 
     &__apps {
@@ -110,7 +116,6 @@ $imageUrl: './assets/img/iphone-bg.png';
         background-color: lighten(#D6A773, 25%);
         opacity: .5;
     }
-
 
 }
 
