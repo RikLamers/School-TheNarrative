@@ -8,6 +8,15 @@ class Facebook {
 	setup() {
 		this.$holder = document.getElementsByClassName('m-facebook')[0];
 		this.$body = document.getElementsByTagName('body');
+
+		this.$username = JSON.parse(localStorage.getItem('username'));
+		this.$facebookLogin = document.getElementsByClassName('m-facebook__login')[0];
+		if (this.$facebookLogin) {
+			this.$facebookLoginUser = document.getElementsByClassName('m-facebook__login--name')[0];
+			if (this.$username) {
+				this.$facebookLoginUser.value = this.$username;
+			}
+		}
 		
 		if (this.$holder) {
 			this.$facebookAccPic = document.getElementById('m-facebook__profilepic');
