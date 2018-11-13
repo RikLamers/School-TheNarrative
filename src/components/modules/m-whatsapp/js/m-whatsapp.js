@@ -10,39 +10,39 @@ class WhatsApp {
         this.$body = document.getElementsByTagName('body')[0];
 
         // localstorage
-		this.$localStorage = JSON.parse(localStorage.getItem('progression'));
-		this.$chapter = this.getChapter();
-		this.$chapterStorage;
+		// this.$localStorage = JSON.parse(localStorage.getItem('progression'));
+		// this.$chapter = this.getChapter();
+		// this.$chapterStorage;
     }
 
     eventListeners() { }
 
-    getChapter() {
-		for (let i = 0; i < this.$localStorage.length; i++) {
-			if (this.$localStorage[i].done === 0) {
-				this.$chapter = i;
-				this.$chapterStorage = this.$localStorage[i];
-				break;
-			}
-		}
-		this.placeRightText(this.$chapter);
-    }
-    
-    placeRightText(chapter) {
-        chapter = chapter + 1;
+    // getChapter() {
+	// 	for (let i = 0; i < this.$localStorage.length; i++) {
+	// 		if (this.$localStorage[i].done === 0) {
+	// 			this.$chapter = i;
+	// 			this.$chapterStorage = this.$localStorage[i];
+	// 			break;
+	// 		}
+	// 	}
+	// 	this.placeRightText(this.$chapter);
+    // }
 
-        if (chapter === 1) {
-            //
-        } else if (chapter === 2) {
-            this.chapterTwee();
-        } else if (chapter === 3) {
-            if (this.$chapterStorage.whatsApp === 0) {
-                //
-            } else  if (this.$chapterStorage.whatsApp === 1) {
-                //
-            }
-        }
-    }
+    // placeRightText(chapter) {
+    //     chapter = chapter + 1;
+    //
+    //     if (chapter === 1) {
+    //         this.showChapter1();
+    //     } else if (chapter === 2) {
+    //         this.showChapter2();
+    //     } else if (chapter === 3) {
+    //         if (this.$chapterStorage.whatsApp === 0) {
+    //             //
+    //         } else  if (this.$chapterStorage.whatsApp === 1) {
+    //             //
+    //         }
+    //     }
+    // }
 
     displayText() {
         var bubbleWrap = document.getElementById("bubble-wrapper"),
@@ -61,6 +61,18 @@ class WhatsApp {
 
         var chapter1intro = "Koning Clovis heeft mij gevraagd het Christendom in Maastricht te verspreiden. Daarom heb ik een afspraak gemaakt met de bisschop van Tongeren waardoor we nu zijn goede naam mogen gebruiken. We maken van hem een heilige; ‘sint Servaas’! Nu moeten we alleen nog wonderen creëren zodat de mensen ons geloven. Wil je me hierbij helpen?";
         var chapter2intro = "Er doet een verhaal de rondte dat er al dagen een zwerver langs de Maas loopt en hij is er zelfs al meerdere keren bijna in gevallen, we vermoeden dat hij niets ziet. Als we hem helpen kunnen we dat als wonder verkondigen! Loop naar de Maas en verricht dat wonder!";
+        var chapter3intro = "Kleermaakster Henriette Neijt is een van de weinige Christenen in Maastricht en heeft contact met ons opgenomen. Ze verricht wonderen met stoffen en heeft ons aangeboden st. Servaas kleding te maken. Ga naar haar toe en maak een keuze uit de stoffen.";
+        var chapter4intro = "Ik las net een Tweet van ene Tjeu Das, hij gelooft ons niet. Kijk maar; link (Twitter post; St. Servaas bestaat niet). Mensen geloven die Tjeu Das, ook IJzersmid Frederik Smidsch, hij is de beste smid van de stad en heeft daardoor veel invloed. Ga naar hem toe en overtuig hem van zijn ongelijk!";
+        var chapter5intro = "Kom naar de kerk aan het Vrijthof, het is tijd voor een nieuw wonder. De duivel heeft de kerk proberen te vernielen maar st. Servaas geeft zijn leven voor de stad. Zo hebben we minder kans om betrapt te worden door die Tjeu Das. Laat de mensen zien dat de duivel uitgedreven is en vertel ze dat st. Servaas zijn leven heeft gegeven voor de stad.";
+        var chapter6intro = "Tjeu Das heeft ook weer van zich laten horen, kijk maar; link. Ga naar de Markt en haal wat brood, spek en groenten om die te zegenen met het water dat we st. Servaas voor zijn dood natuurlijk nog hebben laten zegenen. Zo blijft st. Servaas in de gedachte van de mensen en winnen we er wellicht nog wat bij ook!";
+        var chapter7intro = "Het is mij ter ore gekomen dat dorpsgek Gekke Geis al dagen door de stad zwalkt, als we hem helpen blijven de mensen denken aan st. Servaas. Je kunt hem vinden bij de oude brug.";
+        var chapter8intro = "Ja hoor, Tjeu Das heeft ook weer iets geplaatst, kijk maar; link (Instagram post; Anti st. Servaas kleding). Op het eind van de brug Rinalda de Hoor te vinden, zij is een dame van lichte zeden, is dol op roddels en sensatie en hoort en vertelt door haar zondige werk vaak over de verhalen die de rondte doen in de stad. Als we haar overtuigen van st. Servaas, dan hoort de hele stad daarover.";
+        var chapter9intro = "Bij de stadsbrouwerij aan de linkerkant van de brug kunnen we met het gezegde st. Servaas water drank brouwen. Ga ernaartoe en start het brouwproces!";
+        var chapter10intro = "Tjeu Das organiseert bij de uitkijktoren langs de Maas een bijeenkomst om zijn relaas te houden, kijk maar; link (Facebook post; St. Servaas bestaat niet bijeenkomst). Ga ernaartoe. Ik heb de sleutel daar in de buurt verstop voor je om te zoeken. De locatie kan worden gevonden door het volgende te “decoden”. De sleutel is het belangrijkste relikwie want het is de sleutel van de kapel in de kerk aan het Vrijthof. Je hebt vast gelezen dat de sleutel vermist is sinds zijn dood, dat waren wij zelf. Er zal een pater aanwezig zijn om je te helpen. \n" +
+            "\n" +
+            "Na het vinden van de sleutel moet de menigte afgeleid worden om de sleutel te kunnen verstoppen en we we de menigte weten te overtuigen, dan zijn we eindelijk af van Tjeu Das.\n";
+        var chapterSucces = "Het is ons gelukt! Tjeu Das en zijn aanhangers hebben hun biezen gepakt en de stad verlaten.De stad gelooft nu in st. Servaas en het Christendom en groeit als nooit tevoren, kijk maar; link (Facebook post; Maastricht bloeit op dankzij st. Servaas; Mini-volksverhuizing Tjeu Das en aanhangers)";
+        var chapterFail = "Het is je niet gelukt… Tjeu Das heeft meer volgers dan ooit. De stad gelooft nauwelijks meer in st. Servaas en het Christendom en de groei maakt een pas op de plaats, kijk maar; link (Facebook post; Maastricht in de vergetelheid door kerkelijk bedrog; Tjeu Das; Maastrichts’ grootste influencer)";
 
         // geluiden verzenden ontvangen
         function sendSound() {
@@ -84,12 +96,6 @@ class WhatsApp {
                 appImgLarge.classList.add('hide');
             };
         };
-        // document.addEventListener("click", function (event) {
-        //     console.log(event.target.id);
-        //     if (event.target.id !== appImgLarge) {
-        //         appImgLarge.classList.add('hide');
-        //     }
-        // });
 
         function showAnswer(event) {
             // console.log(event.target.nextElementSibling);
@@ -123,202 +129,1115 @@ class WhatsApp {
             }
         };
 
-        // user komt op pagina, verhaal start hier
-        setTimeout(function () { // EERSTE BERICHT
-            // Batsegeziech komt online
-            document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
-            document.getElementById("typing").classList.remove('hide');
-        }, 1000); // CHAPTER1INTRO
-        setTimeout(function () {
-            // toon eerste bericht CHAPTER1INTRO
-            bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
-                '<div class="m-whatsapp__txt"> ' +
-                '<p class="m-whatsapp__message">' + chapter1intro + '</p>' +
-                '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-                '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+        function showChapter1() {
+            // user komt op pagina, verhaal start hier
+            setTimeout(function () { // EERSTE BERICHT
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000); // CHAPTER1INTRO
+            setTimeout(function () {
+                // toon eerste bericht CHAPTER1INTRO
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter1intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
 
-            bubbleClass[0].classList.remove('hide');
-            document.getElementById("typing").classList.add('hide');
-            document.getElementById("online").classList.remove('hide');
-            recieveSound();
-        }, 1500);
-        setTimeout(function() {
-            choiceWrap[0].classList.remove('hide');
-            choice.innerHTML = '<div class="m-whatsapp__choice">' +
-                '<div class="antwoord">Antwoord 1</div>' +
-                '<div class="lees">Lees volledige antwoord</div>' +
-                '<div id="1" class="m-whatsapp__answer">' + "Ja, ik doe mee!" + '</div>' +
-                '</div>' +
-                '<div class="m-whatsapp__choice">' +
-                '<div class="antwoord">Antwoord 2</div>' +
-                '<div class="lees">Lees volledige antwoord</div>' +
-                '<div id="2" class="m-whatsapp__answer">' + "Ik wil best helpen, maar waarom de naam \“sint Servaas?\”" + '</div>' +
-                '</div>';
-            for(let i=0; i < clickAnswer.length; i++){
-                clickAnswer[i].onclick = function() {
-                    showAnswer(event);
-                };
-            }
-            for(let i=0; i < answer.length; i++){
-                answer[i].onclick = function(e) {
-                    // console.log(this.innerHTML);
-                    bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
-                        '<div class="m-whatsapp__txt"> ' +
-                        '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
-                        '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-                        '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
-                        '</div>');
-                    this.onclick = null;
-                    sendSound();
-                    if (e.target.id === "1") {
-                        setTimeout(function() {
-                            document.getElementById("typing").classList.remove('hide');
-                            document.getElementById("online").classList.add('hide');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Ja, ik doe mee!" + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 2</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Ik wil best helpen, maar waarom de naam \“sint Servaas?\”" + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showAnswer(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        // console.log(this.innerHTML);
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        if (e.target.id === "1") {
                             setTimeout(function() {
-                                document.getElementById("typing").classList.add('hide');
-                                document.getElementById("online").classList.remove('hide');
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
                             }, 500 );
-                        }, 500 );
-                        setTimeout(function() {
-                            bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 120px;">' +
-                                '<div class="m-whatsapp__txt"> ' +
-                                '<p class="m-whatsapp__message">' + "Mooi zo, ga meteen naar Facebook, Instagram en Twitter en log daar in. <a href='/facebook-login.html'>Klik hier</a>." + '</p>' +
-                                '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-                                '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
-                            recieveSound();
-                        }, 1000 );
-                    }
-                    if (e.target.id === "2") {
-                        setTimeout(function() {
-                            document.getElementById("typing").classList.remove('hide');
-                            document.getElementById("online").classList.add('hide');
                             setTimeout(function() {
-                                document.getElementById("typing").classList.add('hide');
-                                document.getElementById("online").classList.remove('hide');
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 120px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Mooi zo, ga meteen naar Facebook, Instagram en Twitter en log daar in. <a href='/facebook-login.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
                             }, 1000 );
-                        }, 0 );
-                        setTimeout(function() {
-                            bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 175px;">' +
-                                '<div class="m-whatsapp__txt"> ' +
-                                '<p class="m-whatsapp__message">' + "Sint wordt in het Christendom gebruikt om aan te geven dat iemand heilig is en Servaas is de naam van de bisschop van Tongeren, vandaar. Mooi zo, ga meteen naar Facebook, Instagram en Twitter en log daar in." + '</p>' +
-                                '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-                                '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
-                            recieveSound();
-                        }, 1500 );
-                    }
-                };
-            }
-        }, 1500);
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 175px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Sint wordt in het Christendom gebruikt om aan te geven dat iemand heilig is en Servaas is de naam van de bisschop van Tongeren, vandaar. Mooi zo, ga meteen naar Facebook, Instagram en Twitter en log daar in. <a href='/facebook-login.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter2() {
+            setTimeout(function () { // TWEEDE BERICHT
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000); // CHAPTER1INTRO
+            setTimeout(function () {
+                // toon eerste bericht CHAPTER1INTRO
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter2intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
 
-        // setTimeout(function () { // TWEEDE BERICHT
-        //     // Batsegeziech komt online
-        //     document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
-        //     document.getElementById("typing").classList.remove('hide');
-        // }, 1000); // CHAPTER1INTRO
-        // setTimeout(function () {
-        //     // toon eerste bericht CHAPTER1INTRO
-        //     bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
-        //         '<div class="m-whatsapp__txt"> ' +
-        //         '<p class="m-whatsapp__message">' + chapter2intro + '</p>' +
-        //         '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-        //         '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
-        //
-        //     bubbleClass[0].classList.remove('hide');
-        //     document.getElementById("typing").classList.add('hide');
-        //     document.getElementById("online").classList.remove('hide');
-        //     recieveSound();
-        // }, 1500);
-        // setTimeout(function() {
-        //     choiceWrap[0].classList.remove('hide');
-        //     choice.innerHTML = '<div class="m-whatsapp__choice">' +
-        //         '<div class="antwoord">Keuze 1</div>' +
-        //         '<div class="lees">Lees volledige keuze</div>' +
-        //         '<div id="1" class="m-whatsapp__answer">' + "Je vindt twee ronde glasscherven, wat hout en touw en maakt deze vernuftig aan elkaar. Je geeft het aan de zwerver en zegt er specifiek bij dat ze door St. Servaas geschonken zijn." + '</div>' +
-        //         '</div>' +
-        //         '<div class="m-whatsapp__choice">' +
-        //         '<div class="antwoord">Keuze 2</div>' +
-        //         '<div class="lees">Lees volledige keuze</div>' +
-        //         '<div id="2" class="m-whatsapp__answer">' + "Je vult een emmer met water uit de Maas en wast daarmee de ogen van de zwerver schoon. Je zegt er specifiek bij dat het heilige water van St. Servaas zijn zicht teruggebracht heeft." + '</div>' +
-        //         '</div>' +
-        //         '<div class="m-whatsapp__choice">' +
-        //         '<div class="antwoord">Keuze 3</div>' +
-        //         '<div class="lees">Lees volledige keuze</div>' +
-        //         '<div id="3" class="m-whatsapp__answer">' + "Je negeert de zwerver en laat hem aan zijn lot over." + '</div>' +
-        //         '</div>';
-        //     for(let i=0; i < clickAnswer.length; i++){
-        //         clickAnswer[i].onclick = function() {
-        //             showChoice(event);
-        //         };
-        //     }
-        //     for(let i=0; i < answer.length; i++){
-        //         answer[i].onclick = function(e) {
-        //             // console.log(this.innerHTML);
-        //             bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
-        //                 '<div class="m-whatsapp__txt"> ' +
-        //                 '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
-        //                 '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-        //                 '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
-        //                 '</div>');
-        //             this.onclick = null;
-        //             sendSound();
-        //             console.log(e.target.id);
-        //             if (e.target.id === "1") {
-        //                 setTimeout(function() {
-        //                     document.getElementById("typing").classList.remove('hide');
-        //                     document.getElementById("online").classList.add('hide');
-        //                     setTimeout(function() {
-        //                         document.getElementById("typing").classList.add('hide');
-        //                         document.getElementById("online").classList.remove('hide');
-        //                     }, 500 );
-        //                 }, 500 );
-        //                 setTimeout(function() {
-        //                     bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 385px;">' +
-        //                         '<div class="m-whatsapp__txt"> ' +
-        //                         '<p class="m-whatsapp__message">' + "Goed gedaan, de zwerver kan wonder boven wonder weer wat zien! Kijk wat erover wordt gezegd; link (Facebook post; St. Servaas laat blinde weer zien)." + '</p>' +
-        //                         '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-        //                         '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
-        //                     recieveSound();
-        //                 }, 1000 );
-        //             }
-        //             if (e.target.id === "2") {
-        //                 setTimeout(function() {
-        //                     document.getElementById("typing").classList.remove('hide');
-        //                     document.getElementById("online").classList.add('hide');
-        //                     setTimeout(function() {
-        //                         document.getElementById("typing").classList.add('hide');
-        //                         document.getElementById("online").classList.remove('hide');
-        //                     }, 1000 );
-        //                 }, 0 );
-        //                 setTimeout(function() {
-        //                     bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 370px;">' +
-        //                         '<div class="m-whatsapp__txt"> ' +
-        //                         '<p class="m-whatsapp__message">' + "Goed gedaan, de zwerver kan wonder boven wonder weer wat zien! Kijk wat erover wordt gezegd; link (Facebook post; St. Servaas laat blinde weer zien)." + '</p>' +
-        //                         '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-        //                         '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
-        //                     recieveSound();
-        //                 }, 1500 );
-        //             }
-        //             if (e.target.id === "3") {
-        //                 setTimeout(function() {
-        //                     document.getElementById("typing").classList.remove('hide');
-        //                     document.getElementById("online").classList.add('hide');
-        //                     setTimeout(function() {
-        //                         document.getElementById("typing").classList.add('hide');
-        //                         document.getElementById("online").classList.remove('hide');
-        //                     }, 1000 );
-        //                 }, 0 );
-        //                 setTimeout(function() {
-        //                     bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 175px;">' +
-        //                         '<div class="m-whatsapp__txt"> ' +
-        //                         '<p class="m-whatsapp__message">' + "Jammer, ik ben verwonderd dat je deze uitgelezen mogelijkheid hebt laten lopen, ik hoop dat je weet wat je doet." + '</p>' +
-        //                         '<span class="m-whatsapp__timestamp">' + time + '</span>' +
-        //                         '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
-        //                     recieveSound();
-        //                 }, 1000 );
-        //             }
-        //         };
-        //     }
-        // }, 1500);
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 1</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je vindt twee ronde glasscherven, wat hout en touw en maakt deze vernuftig aan elkaar. Je geeft het aan de zwerver en zegt er specifiek bij dat ze door St. Servaas geschonken zijn." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 2</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je vult een emmer met water uit de Maas en wast daarmee de ogen van de zwerver schoon. Je zegt er specifiek bij dat het heilige water van St. Servaas zijn zicht teruggebracht heeft." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 3</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Je negeert de zwerver en laat hem aan zijn lot over." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showChoice(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        // console.log(this.innerHTML);
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 385px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Goed gedaan, de zwerver kan wonder boven wonder weer wat zien! Kijk wat erover wordt gezegd; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 380px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Goed gedaan, de zwerver kan wonder boven wonder weer wat zien! Kijk wat erover wordt gezegd; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 175px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Jammer, ik ben verwonderd dat je deze uitgelezen mogelijkheid hebt laten lopen, ik hoop dat je weet wat je doet." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter3() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter3intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 1</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Katoen: Dunne stof, niet duur, zacht, veelzijdig." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 2</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Zijden: Dunne stof, duur, structuur, exotisch." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 3</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Wol: Warme stof, niet duur, zacht, beperkt." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showChoice(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 165px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Wat een wonderschone kleren, betaalbaar dus daar kunnen we veel van verkopen en aan verdienen. We hebben ze op Instagram gezet; <a href='/instagram.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 165px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Wat een wonderschone kleren, duur maar gewild dus daar kunnen we veel aan verdienen hoewel niet veel mensen ze kunnen betalen. We hebben ze op Instagram gezet; <a href='/instagram.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 165px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Wat een wonderschone kleren, betaalbaar en warm maar we kunnen er helaas niet alles van maken. We hebben ze op Instagram gezet; <a href='/instagram.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter4() {
+            setTimeout(function () {
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter4intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je spreekt hem aan en vertelt over de vele mensen die de stad bezoeken voor st. Servaas en dat dit de smid wel eens veel nieuwe klanten zou kunnen opleveren." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 2</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je spreekt hem aan en vertelt over de tegenspoed die st. Servaas afroept over hen die niet in hem geloven en dat een succesvolle zakenman zelfs al zijn bezittingen is kwijtgeraakt." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 3</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Je spreekt hem aan en vertelt vol overgave over het geweldige wonder van de zwerver dat st. Servaas verricht heeft." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showAnswer(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 330px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Ik bewonder je overtuigingskracht, de smid heeft zich zelfs positief uitgelaten over st. Servaas, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 330px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Ik bewonder je overtuigingskracht, de smid lijkt zijn succesvolle smederij niet te durven riskeren en laat zich niet meer uit over de kwestie!" + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 330px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Ik bewonder je inzet, maar de smid was al skeptisch over het wonder en is niet overtuigd door je overdreven verhaal, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter5() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter5intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je spreekt een voorbijganger op het drukke hof aan en vertelt deze over de duivelsuitdrijving die st. Servaas heeft moeten bekopen met de dood om de stad te redden. Andere horen je nieuwsgierig aan en van mond-op-mond verspreid je bericht zich door de stad" + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 2</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je maakt een foto van de kerk om te laten zien dat de duivelsuitdrijving succesvol was en de kerk dus gespaard is gebleven. De foto post je op Facebook met het bijschrift dat st. Servaas zijn leven heeft gegeven voor de stad." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 3</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Je bent niet overtuigd en vind het niet geloofwaardig. Je negeert de opdracht." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showAnswer(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 490px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Gecondoleerd, wonderbaarlijk hoe je mond-op-mond een bericht kan verspreiden. Iedereen in de omgeving van het Vrijthof heeft erover gehoord en is st. Servaas dankbaar voor het redden van hun stad, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 490px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Gecondoleerd, wonderbaarlijk hoe snel zo’n post zich kan verspreiden. Heel Maastricht heeft erover gehoord en is st. Servaas dankbaar voor het redden van hun stad, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 220px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Gecondoleerd, wonderbaarlijk hoe je mijn opdracht negeert. We hebben zelf maar een bericht op Facebook geplaatst, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter6() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter6intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je koopt het brood, spek en de groeten en zegent deze direct met het gezegende water. Omstanders zijn erg nieuwsgierig waarop je besluit de gezegende producten ter plekke aan de hoogste bieder te verkopen. " + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 2</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je koopt het brood, spek en de groeten en zegent deze direct met het gezegende water. Omstanders zijn erg nieuwsgierig waarop je besluit de gezegende producten ter plekke aan de mensen te geven. " + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 3</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Je koopt het brood, spek en de groeten en zegent deze buiten het zicht van de menigte met het gezegende water. Je besluit de gezegende producten ter te verkopen. " + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showAnswer(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 425px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "De wonderen zijn de wereld nog niet uit, zoveel verdienen aan een simpel brood heb ik nog nooit meegemaakt, dat heeft wat teweeggebracht, kijk maar; <a href='/twitter.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 380px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "De wonderen zijn de wereld nog niet uit, wat mensen wel niet doen voor een gratis simpel brood, dat heeft wat teweeggebracht, kijk maar; link (Twitter post; Gratis st. Servaas producten zorgen voor chaos op de Markt)." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 380px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "De wonderen zijn de wereld nog niet uit, maar dit was wel erg ambitieus. Niemand weet of geloofd dat het om gezegende producten gaat, kijk maar; <a href='/twitter.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter7() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter7intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 1</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je hebt nog wat gezegend brood en water over die je aan gekke Geis geeft." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 2</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je brouwt een kruidenthee voor gekke Geis." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 3</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + " Je laat gekke Geis verder zwalken en negeert de opdracht van de priester." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showChoice(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 225px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Wonderbaarlijk hoe dronken een mens kan zijn, door het brood en water is gekke Geis nu weer sober, de mensen hebben gezien dat je dat met de gezegende producten hebt gedaan, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 170px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Wonderbaarlijk hoe dronken een mens kan zijn, door de kruidenthee is gekke Geis nu weer sober, de mensen hebben dat ook gezien, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 220px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Wonderbaarlijk hoe dronken een mens kan zijn, jammer dat je gekke Geis niet hebt geholpen. We hadden de exposure voor st. Servaas goed kunnen gebruiken." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter8() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter8intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je spreekt haar aan en vertelt over de vele mensen die de stad nu bezoeken door st. Servaas en dat dit vast ook de reden is dat ze zoveel verdiend de laatste tijd." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je spreekt haar aan en vertelt over de gevaren van haar werk en dat geloven in st. Servaas haar daartegen kan beschermen.\n" + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Je spreekt haar aan en vertelt vol overgave over de geweldige wonderen die st. Servaas verricht heeft." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showAnswer(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 325px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Ik blijf je overtuigingskracht bewonderen, Rinalda is maar wat blij met st. Servaas, kijk maar; <a href='/twitter.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 280px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Ik blijf je overtuigingskracht bewonderen, maar Rinalda doet dit werk al jaren en heeft al vele kwalen overwonnen. Ze vindt de bescherming van st. Servaas helemaal niet nodig, kijk maar; <a href='/twitter.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 280px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Ik blijf je overtuigingskracht bewonderen, dankzij Rinalda verspreiden de verhalen over de wonderen zich weer alsof ze net hebben plaatsgevonden, kijk maar; <a href='/twitter.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter9() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter9intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 1</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Wijn: Gemiddeld alcoholpercentage, duur, bitterzoet, fruitig. " + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 2</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Bier: Laag alcoholpercentage, niet duur, bitter, kruidig." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Keuze 3</div>' +
+                    '<div class="lees">Lees volledige keuze</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Absint: Hoog alcoholpercentage, duur, bitter, kruidig." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showChoice(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 220px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Proost! Wat een wonderschoon brouwsel! duur maar populair dus daar kunnen we veel aan verdienen hoewel niet veel mensen het kunnen betalen. We hebben ze op Instagram gezet; <a href='/instagram.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 170px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Proost! Wat een wonderschoon brouwsel! Betaalbaar en populair dus daar kunnen we veel van verkopen en aan verdienen. We hebben ze op Instagram gezet; <a href='/instagram.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 170px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Proost! Wat een wonderschoon brouwsel! duur en populair maar je word er wel snel dronken van. We hebben hem op Instagram gezet; <a href='/instagram.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showChapter10() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapter10intro + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+            setTimeout(function() {
+                choiceWrap[0].classList.remove('hide');
+                choice.innerHTML = '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 1</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="1" class="m-whatsapp__answer">' + "Je hebt de sleutel ongezien in de zakken van de mantel van Tjeu weten te verstoppen. Zodra de bijeenkomst start ga je vooraan in de menigte staan en laat je de pater Tjeu confronteren met de sleutel in zijn mantel." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 2</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="2" class="m-whatsapp__answer">' + "Je hebt de sleutel ongezien in de zakken van de mantel van Tjeu weten te verstoppen. Zodra de bijeenkomst start ga je vooraan in de menigte staan en confronteer je Tjeu met de sleutel in zijn mantel." + '</div>' +
+                    '</div>' +
+                    '<div class="m-whatsapp__choice">' +
+                    '<div class="antwoord">Antwoord 3</div>' +
+                    '<div class="lees">Lees volledige antwoord</div>' +
+                    '<div id="3" class="m-whatsapp__answer">' + "Je hebt de sleutel ongezien in de zakken van de mantel van Tjeu weten te verstoppen. Zodra de bijeenkomst start ga je in de menigte staan en wijs je de mensen naast je op de sleutel die volgens jou duidelijk uit de mantel van Tjeu steekt. Je overtuigd hen en samen confronteren jullie Tjeu met de sleutel in zijn mantel." + '</div>' +
+                    '</div>';
+                for(let i=0; i < clickAnswer.length; i++){
+                    clickAnswer[i].onclick = function() {
+                        showChoice(event);
+                    };
+                }
+                for(let i=0; i < answer.length; i++){
+                    answer[i].onclick = function(e) {
+                        bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble alt">' +
+                            '<div class="m-whatsapp__txt"> ' +
+                            '<p class="m-whatsapp__message">' + this.innerHTML + '</p>' +
+                            '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                            '</div> <div class="m-whatsapp__bubble-arrow alt"></div> ' +
+                            '</div>');
+                        this.onclick = null;
+                        sendSound();
+                        console.log(e.target.id);
+                        if (e.target.id === "1") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 500 );
+                            }, 500 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend', '<div class="m-whatsapp__wrapper-bubble" style="margin-top: 330px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Je hebt al ons harde werk op het spel gezet! Tjeu Das liet zich niets zeggen door notabene een pater en nu hij de sleutel zelf heeft gevonden gebruikt hij het tegen ons, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                        if (e.target.id === "2") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 330px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Gefeliciteerd, het wonder is geschiet! Tjeu Das liet zonder aarzelen zijn zakken zien waaruit de sleutel viel. Iedereen herkende de sleutel van het bericht en niemand geloofd een dief, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1500 );
+                        }
+                        if (e.target.id === "3") {
+                            setTimeout(function() {
+                                document.getElementById("typing").classList.remove('hide');
+                                document.getElementById("online").classList.add('hide');
+                                setTimeout(function() {
+                                    document.getElementById("typing").classList.add('hide');
+                                    document.getElementById("online").classList.remove('hide');
+                                }, 1000 );
+                            }, 0 );
+                            setTimeout(function() {
+                                bubbleWrap.insertAdjacentHTML('beforeend','<div class="m-whatsapp__wrapper-bubble" style="margin-top: 330px;">' +
+                                    '<div class="m-whatsapp__txt"> ' +
+                                    '<p class="m-whatsapp__message">' + "Gefeliciteerd, het wonder is geschiet! Tjeu Das liet onder druk van je groep zijn zakken zien waaruit de sleutel viel. Iedereen herkende de sleutel van het bericht en niemand geloofd een dief, kijk maar; <a href='/facebook.html'>Klik hier</a>." + '</p>' +
+                                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>');
+                                recieveSound();
+                            }, 1000 );
+                        }
+                    };
+                }
+            }, 1500);
+        }
+        function showSucces() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapterSucces + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+        }
+        function showFail() {
+            setTimeout(function () { //
+                // Batsegeziech komt online
+                document.getElementsByClassName("m-whatsapp__name")[0].style.lineHeight = "140px";
+                document.getElementById("typing").classList.remove('hide');
+            }, 1000);
+            setTimeout(function () {
+                bubbleWrap.innerHTML = '<div class="m-whatsapp__wrapper-bubble hide">' +
+                    '<div class="m-whatsapp__txt"> ' +
+                    '<p class="m-whatsapp__message">' + chapterFail + '</p>' +
+                    '<span class="m-whatsapp__timestamp">' + time + '</span>' +
+                    '</div> <div class="m-whatsapp__bubble-arrow"></div> </div>';
+                console.log('test');
+                bubbleClass[0].classList.remove('hide');
+                document.getElementById("typing").classList.add('hide');
+                document.getElementById("online").classList.remove('hide');
+                recieveSound();
+            }, 1500);
+        }
+
     }
 
     initialize() {
