@@ -20,6 +20,10 @@ $imageUrl: './assets/img/whatsappbg.png';
   margin: 0px;
   padding: 0px;
 
+  a {
+    color: map-get($colors, twitterblue);
+  }
+
   // Header
   &__header {
     background: white;
