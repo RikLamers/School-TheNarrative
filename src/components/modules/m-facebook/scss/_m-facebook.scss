@@ -7,6 +7,7 @@
 $module-name: 'facebook';
 
 $profile-pic: './assets/img/facebook/profilepic.svg';
+$facebook-logo: './assets/img/facebook/login-logo.svg';
 
 /* =============================================================================
 	BASE
@@ -159,6 +160,34 @@ $profile-pic: './assets/img/facebook/profilepic.svg';
 		p {
 			@include rem(12);
 			margin: 0;
+		}
+
+	}
+
+	&__login {
+		height: 100%;
+		width: 100%;
+		background-color: map-get($colors, facebookblue);
+
+		&--logo {
+			width: 80%;
+			display: block;
+			margin: 0 auto;
+			margin-top: 50px;
+			margin-bottom: 25px;
+		}
+
+		input, &--btn {
+			font-family: $font-family--secondary;
+			width: 90%;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 10px;
+		}
+
+		&--btn {
+			background-color: darken(map-get($colors, facebookblue), 10%);
+			color: map-get($colors, white)!important;
 		}
 
 	}
