@@ -17,6 +17,16 @@ class Facebook {
 				this.$facebookLoginUser.value = this.$username;
 			}
 		}
+
+		// Notification
+		this.$notification = document.getElementById('o-notification');
+		if (this.$notification) {
+			this.$notificationApp = document.getElementById('o-notification__app');
+			this.$notificationAppText = document.getElementById('o-notification__apptext');
+			this.$notificationFrom = document.getElementById('o-notification__from');
+			this.$notificationText = document.getElementById('o-notification__text');
+			this.$notificationLink = document.getElementById('o-notification__link');
+		}
 		
 		if (this.$holder) {
 			this.$facebookAccPic = document.getElementById('m-facebook__profilepic');
@@ -24,12 +34,27 @@ class Facebook {
 			this.$facebookTimestamp = document.getElementById('m-facebook__postdata--timestamp');
 			this.$facebookPostTextEl = document.getElementById('m-facebook__posttext');
 			this.$facebookLink = document.getElementsByClassName('m-facebook__link');
+			this.$facebookPostImg = document.getElementById('m-facebook__img');
 			this.$facebookLikes = document.getElementById('m-facebook__likes');
 			this.$facebookShares = document.getElementById('m-facebook__shares');
 			this.$facebookComments = document.getElementById('m-facebook__comments');
 			this.$facebookPostInfo = [
 				{
-					chapter: 1
+					chapter: 1,
+					accountName: 'Henriëtte Neijt',
+					accountImg: '/img/pf/henriette.jpg',
+					post: 'De nieuwste Merovingische mode',
+					postImg: '/img/facebook/henriette-poster.jpg',
+					link: '#',
+					likes: 'Tjeu Das en 96 andere',
+					shares: '7 share',
+					comments: [
+						{
+							name: 'Frederik Smidsch',
+							pic: '/img/pf/frederik.jpg',
+							comment: 'Die kint pas good neije!'
+						}
+					]
 				},
 				{
 					chapter: 2,
@@ -175,9 +200,32 @@ class Facebook {
 		this.placeRightText(this.$chapter);
 	}
 
-	placeRightText(chapter) {
+	notifications(text, link = 'javascript:void(0);', hide = true, app = '/img/whatsapp.svg', appText = 'whatsapp', from = 'batsegeziech') {
+		this.$notificationApp.src = app;
+        this.$notificationAppText.innerText = appText;
+        this.$notificationFrom.innerText = from;
+        this.$notificationText.innerText = text;
+        this.$notificationLink.href = link;
+		this.$notification.className = 'o-notification o-notification--show';
 
-		if (chapter === 9) {
+		if (hide) {
+			setTimeout(() => {
+				this.$notification.className = 'o-notification o-notification--hide';
+			}, 5000);
+		}
+	}
+
+	placeRightText(chapter) {
+		if (chapter === 0) {
+			setTimeout(() => {
+				this.$notification.setAttribute('class', 'facebook0');
+				document.getElementsByClassName('facebook0')[0].addEventListener('click', (e) => {
+					this.$localStorage[chapter].done = 1;
+					localStorage.setItem('progression', JSON.stringsify(this.$localStorage));
+				});
+				this.notifications('Er doet een verhaal de rondte...', '/whatsapp.html', false);
+			}, 5000);
+		} else if (chapter === 9) {
 			if (this.$chapterStorage.Facebook === 1) {
 				return;
 			} else if (this.$chapterStorage === 2 || this.$chapterStorage === 3) {
