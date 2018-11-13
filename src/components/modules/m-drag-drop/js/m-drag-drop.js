@@ -104,9 +104,7 @@ class DragDrop {
         this.$notificationFrom.innerText = 'Batsegeziech';
         this.$notificationText.innerText = 'Lekker gewerkt pik! Ik heb je volgende opdracht! lees het hele appje.';
         this.$notificationLink.href = 'https://www.google.com';
-        // setTimeout(() => {
-            this.$notification.className = 'o-notification o-notification--show';
-        // }, 2000);
+        this.$notification.className = 'o-notification o-notification--show';
     }
 
 	initialize() {

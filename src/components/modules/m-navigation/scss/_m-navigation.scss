@@ -10,6 +10,75 @@ $module-name: 'navigation';
 	BASE
 ============================================================================= */
 
+.meropedia {
+
+	.m-#{$module-name} {
+		font-family: $font-family--secondary;
+		@include rem(20);
+	
+		button {
+			position: absolute;
+			top: 0px;
+			right: 10px;
+			z-index: 1;
+		}
+	
+		&__list {
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			display: none;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			padding-top: 50px;
+			background-color: rgba(0, 0, 0, .7);
+			overflow-y: scroll;
+			overflow-x: hidden;
+			color: map-get($colors, white);
+	
+			&.is--active {
+				display: block;
+			}
+	
+		}
+	
+		&__item {
+			text-align: center;
+			@include rem(16);
+			padding: 0;
+	
+			&--chapter {
+				@include rem(20);
+				padding: 20px 0;
+				margin-top: 25px;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+	
+			// @media (min-width: breakpoint-min(sm)) {
+			// 	padding: 10px 20px;
+			// 	display: inline-block;
+			// }
+	
+			a {
+				padding: 20px 0;
+			}
+	
+		}
+	
+	}
+	
+	.m-#{$module-name}.is--active {
+		display: block;
+	}
+
+}
+
 .m-#{$module-name} {
 	@include rem(20);
 
@@ -32,7 +101,7 @@ $module-name: 'navigation';
 		margin: 0;
 		padding-top: 50px;
 		background-color: rgba(0, 0, 0, .7);
-
+		overflow-y: scroll;
 
 		&.is--active {
 			display: block;
