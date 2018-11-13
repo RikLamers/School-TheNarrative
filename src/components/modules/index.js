@@ -1,4 +1,5 @@
 export { default as DragDrop } from './m-drag-drop/js/m-drag-drop';
+export { default as EndGame } from './m-end-game/js/m-end-game';
 export { default as Facebook } from './m-facebook/js/m-facebook';
 export { default as Instagram } from './m-instagram/js/m-instagram';
 export { default as Intro } from './m-intro/js/m-intro';
