@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'end-game';
+
+$perkament-bg: './assets/img/perkament-bg.svg';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	background-image: url($perkament-bg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+
+	h1 {
+		margin-top: 0;
+		padding-top: 25px;
+		text-align: center;
+	}
+
+	p {
+		text-align: center;
+	}
+
+	input[type='text'] {
+		border: 1px solid map-get($colors, black);
+		background-color: transparent;
+		text-align: center;
+		width: 80%;
+		display: block;
+		margin: 10px auto 25px;
+	}
+
+	&__btn {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
+
+	&__part1 {
+
+		p {
+			padding: 0 8px;
+
+			span {
+				padding: 8px 12px;
+			}
+
+		}
+
+	}
+
+	&__part2, &__part3, &__part4 {
+		display: none;
+		padding: 0 10px;
+	}
+
+}
