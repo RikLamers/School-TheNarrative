@@ -9,6 +9,7 @@ $logo-width: 200px;
 $logo-height: 50px;
 $logo-home: './assets/img/home-logo.svg';
 $logo-meropedia: './assets/img/meropedia-logo.svg';
+$logo-merovinger: './assets/img/merovinger-logo.svg';
 $logo-img-width--mobile: 100px;
 $logo-img-height--mobile: 25px;
 $logo-img-width--medium: 140px;
@@ -47,6 +48,28 @@ BASE
 		}
 	}
 
+}
+
+.merovinger {
+	.o-#{$object-name} {
+		width: $logo-img-width--medium;
+		height: $logo-img-height--medium;
+		background: url($logo-merovinger);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		display: inline-block;
+
+		@media (min-width: breakpoint-min(sm)) {
+			width: $logo-img-width--medium;
+			height: $logo-img-height--medium;
+		}
+
+		@media (min-width: breakpoint-min(lg)) {
+			width: $logo-img-width;
+			height: $logo-img-height;
+		}
+	}
 }
 
 .o-#{$object-name} {

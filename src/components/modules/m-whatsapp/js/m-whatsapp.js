@@ -9,17 +9,50 @@ class WhatsApp {
         this.$holder = document.getElementsByClassName('m-whatsapp')[0];
         this.$body = document.getElementsByTagName('body')[0];
 
-        // Get chapter
-        this.$storage = JSON.parse(localStorage.getItem('progression'));
-        this.$chapter = this.getChapter(this.$storage);
+        // localstorage
+		this.$localStorage = JSON.parse(localStorage.getItem('progression'));
+		this.$chapter = this.getChapter();
+		this.$chapterStorage;
     }
 
     eventListeners() { }
 
-    getChapter(storage) {
-        for (let i = 0; i < storage.length; i++) {
-            if (storage[i].done === 0) {
-                return i + 1;
+    getChapter() {
+		for (let i = 0; i < this.$localStorage.length; i++) {
+			if (this.$localStorage[i].done === 0) {
+				this.$chapter = i;
+				this.$chapterStorage = this.$localStorage[i];
+				break;
+			}
+		}
+		this.placeRightText(this.$chapter);
+    }
+    
+    placeRightText(chapter) {
+        chapter = chapter + 1;
+
+        if (chapter === 1) {
+            this.displayText();
+        } else if (chapter === 2) {
+            this.chapterTwee();
+        } else if (chapter === 3) {
+            if (this.$chapterStorage.whatsApp === 0) {
+                // initiele teksten
+                // verwijzing naar fb bijvoorbeeld
+                // hierna moet in het zelfde hoofdstuk
+                // nog meer gezegd worden via whatsapp
+                // wanneer je op de link klikt naar fb
+                // update je in de localstorage whatsapp
+                // zet de waarde
+                // this.$localStorage[chapter].whatsapp = 1;
+                // plaats nieuwe localstorage
+                // localStorage.setItem('progression', JSON.stringify(this.$localStorage));
+            } else  if (this.$chapterStorage.whatsApp === 1) {
+                // wanneer je van fb terug naar whatsapp
+                // gelinkt wordt, krijg je dat die checkt op whatsapp
+                // binnen de localstorage
+                // en dan staat er 1
+                // dus voert hij andere teksten uit
             }
         }
     }

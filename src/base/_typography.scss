@@ -47,6 +47,7 @@ h6 {
 	//font-weight: bold;
 	word-wrap: break-word;
 	font-family: $font-family--header;
+	text-transform: uppercase;
 	margin: $content-spacing 0 $content-spacing--small 0;
 	color: map-get($colors, primary);
 }
