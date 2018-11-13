@@ -32,7 +32,7 @@ class WhatsApp {
         chapter = chapter + 1;
 
         if (chapter === 1) {
-            this.displayText();
+            //
         } else if (chapter === 2) {
             this.chapterTwee();
         } else if (chapter === 3) {
