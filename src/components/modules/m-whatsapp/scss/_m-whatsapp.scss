@@ -77,7 +77,12 @@ $imageUrl: './assets/img/whatsappbg.png';
   }
 
   &__wrapper {
-    padding: 30px 40px;
+    padding: 0 40px;
+    padding-top: 30px;
+    height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 500px;
+
     &-bubble {
       width: 70%;
       height: auto;
@@ -103,7 +108,7 @@ $imageUrl: './assets/img/whatsappbg.png';
   }
 
   &__txt {
-    padding: 8px 55px 8px 14px;
+    padding: 8px 80px 8px 14px;
       span {
         font-weight: normal;
         color: #b3b3b3;
