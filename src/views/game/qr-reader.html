@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>jsQR Demo</title>
+        <title>Merovingische QR-reader</title>
         <script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
 <!-- <style>
     body {
@@ -87,11 +87,11 @@
                 inversionAttempts: "dontInvert",
                 });
                 if (code) {
-                drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
-                drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
-                drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
-                drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-                window.location.href = code.data;
+                    drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+                    drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+                    drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+                    drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+                    window.location.href = code.data;
                 }
             }
             requestAnimationFrame(tick);
