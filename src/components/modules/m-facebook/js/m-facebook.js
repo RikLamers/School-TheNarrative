@@ -60,21 +60,21 @@ class Facebook {
 					chapter: 2,
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
-					post: 'MAASTRICHT – De afgelopen dagen deed zich het verhaal de rondte over een zwerver die meermaals bijna in de Maas zou zijn gevallen omdat hij niets zag. Nu blijkt zich een waar wonder te hebben voltrokken want de zwerver kan weer zien.',
-					postImg: '/img/merovinger/pf.jpg',
+					post: 'MAASTRICHT – De afgelopen dagen deed zich het verhaal de rondte..',
+					postImg: '/img/facebook/blinde-zwerver.jpg',
 					link: '/merovinger/blinde-zwerver-kan-weer-zien.html',
-					likes: 'Jan Jansen en 5 andere',
-					shares: '1 share',
+					likes: 'Pater Wycks en 69 andere',
+					shares: '12 shares',
 					comments: [
 						{
-							name: 'Jantje',
-							pic: '/img/whatsapp.svg',
-							comment: 'Maecenas faucibus mollis interdum.'
+							name: 'Tjeu Das',
+							pic: '/img/pf/tjeu.jpg',
+							comment: 'Geloof er he-le-maal niks van!'
 						},
 						{
-							name: 'Teuntje',
-							pic: '/img/facebook.svg',
-							comment: 'Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum.'
+							name: 'Rinalda de Hoor',
+							pic: '/img/pf/rinalda.jpg',
+							comment: 'Ik zag hem ook wel eens bij mijn brug'
 						}
 					]
 				}, 
@@ -86,22 +86,28 @@ class Facebook {
 				},
 				{
 					chapter: 5,
-					post: 'MAASTRICHT – Maastricht is in rep en roer omdat vannacht ogenschijnlijk de duivel is verschenen bij de kerk aan het Vrijthof. De duivel had het gemunt op de recent afgebouwde Christelijke kerk welke hij weer met de grond gelijk leek te willen maken. De weerloze kerk, en daarmee tevens de slapende stad werd dit leed echter bespaard door een heldendaad van Sint Servaas die dit met zijn leven heeft moeten bekopen.',
+					post: 'MAASTRICHT – Maastricht is in rep en roer...',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
+					postImg: '/img/facebook/st.servaas-geeft.jpg',
 					link: '/merovinger/sint-servaas-geeft-zijn-leven.html',
-					likes: 'Frederik en 51 andere',
-					shares: '14 shares',
+					likes: 'Henriëtte en 376 andere',
+					shares: '59 shares',
 					comments: [
 						{
-							name: 'Jantje',
-							pic: '/img/whatsapp.svg',
-							comment: 'Maecenas faucibus mollis interdum.'
+							name: 'Henriëtte Neijt',
+							pic: '/img/pf/henriette.jpg',
+							comment: '#RIP Sint servaas. Laten we de kerk als eerbetoon naar hem vernoemen.'
 						},
 						{
-							name: 'Teuntje',
-							pic: '/img/facebook.svg',
-							comment: 'Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum.'
+							name: 'Tjeu Das',
+							pic: '/img/pf/tjeu.jpg',
+							comment: 'Ja hoor, typisch...'
+						},
+						{
+							name: 'Priester Batsegeziech',
+							pic: '/img/pf/batsegeziech.jpg',
+							comment: '#RIP Sint Servaas. Een heilige is heen gegaan. Opdat we nooit vergeten wat hij voor onze stad betekend heeft!'
 						}
 					]
 				},
@@ -110,22 +116,23 @@ class Facebook {
 				},
 				{
 					chapter: 7,
-					post: 'MAASTRICHT – Sint Servaas mag dan wel zijn leven hebben gegeven voor de stad, nog steeds heeft zijn nalatenschap invloed op de levens van de Maastrichtenaren. Zo werd gekke Geis, zoals de dorpsgek in de volksmond wordt genoemd, uit onverwachtse hoek geholpen nadat hij al enkele dagen doelloos door de stad zwalkte.',
+					post: 'MAASTRICHT – Sint Servaas mag dan wel zijn leven hebben...',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
+					postImg: '/img/facebook/sint-servaas-producten.jpg',
 					link: '/merovinger/sint-servaas-producten-zorgen-voor-wonder.html',
-					likes: 'Bastiaan en 67 andere',
-					shares: '11 shares',
+					likes: 'Frederik en 243 andere',
+					shares: '37 shares',
 					comments: [
 						{
-							name: 'Jantje',
-							pic: '/img/whatsapp.svg',
-							comment: 'Maecenas faucibus mollis interdum.'
+							name: 'Frederik Smidsch',
+							pic: '/img/pf/frederik.jpg',
+							comment: 'Wonderbaarlijk die Sint Servaas toch!'
 						},
 						{
-							name: 'Teuntje',
-							pic: '/img/facebook.svg',
-							comment: 'Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum.'
+							name: 'Tjeu Das',
+							pic: '/img/pf/tjeu.jpg',
+							comment: 'Dit gelooft toch niemand, wacht maar...'
 						}
 					]
 				},
@@ -138,22 +145,28 @@ class Facebook {
 				{
 					// First post
 					chapter: 10,
-					post: 'MAASTRICHT – Bij een bijeenkomst, georganiseerd door Tjeu Das, is de Maastrichtse kerk ontmaskert. De aanwezige burgers, die in grote getalen zijn komen opdagen bij de uitkijktoren aan de Maas, waren getuigen van een schouwspel dat niemand van tevoren had kunnen bedenken. Tjeu Das maakte daar terplekke hoogstpersoonlijk korte metten met Sint Servaas.',
+					post: 'MAASTRICHT – Bij een bijeenkomst, georganiseerd door Tjeu Das...',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
-					link: '/merovinger/ker-verzint-heilige.html',
-					likes: 'Rikkerdt en 121 andere',
-					shares: '21 shares',
+					postImg: '/img/facebook/heeft-de-kerk.jpg',
+					link: '/merovinger/kerk-verzint-heilige.html',
+					likes: '121',
+					shares: '50 shares',
 					comments: [
 						{
-							name: 'Jantje',
-							pic: '/img/whatsapp.svg',
-							comment: 'Maecenas faucibus mollis interdum.'
+							name: 'Priester Batsegeziech',
+							pic: '/img/pf/batsegeziech.jpg',
+							comment: 'Dat zo iemand nog een podium krijgt! #GodZijMetHem'
 						},
 						{
-							name: 'Teuntje',
-							pic: '/img/facebook.svg',
-							comment: 'Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum.'
+							name: 'Rinalda de Hoor',
+							pic: '/img/pf/rinalda.jpg',
+							comment: 'Hier ben ik wel benieuwd naar...'
+						},
+						{
+							name: 'Tjeu Das',
+							pic: '/img/pf/tjeu.jpg',
+							comment: 'Iedereen is welkom! #SintServaasBestaatNiet'
 						}
 					]
 				},
@@ -163,6 +176,7 @@ class Facebook {
 					post: 'MAASTRICHT – Bij een bijeenkomst, georganiseerd door Tjeu Das, is de vermiste sleutel van Sint Servaas opgedoken. De aanwezige burgers, die in grote getalen zijn komen opdagen bij de uitkijktoren aan de Maas, waren getuigen van een schouwspel dat niemand van tevoren had kunnen bedenken. Tjeu Das viel terplekke door de mand met zijn relaas en beschuldigingen aan het adres van Sint Servaas.',
 					accountName: 'Dagblad de Merovinger',
 					accountImg: '/img/merovinger/pf.jpg',
+					postImg: '/img/facebook/tjeu-das-blijkt.jpg',
 					link: '/merovinger/tjeu-das-blijkt-judas.html',
 					likes: 'Rikkerdt en 121 andere',
 					shares: '21 shares',
@@ -200,7 +214,7 @@ class Facebook {
 		this.placeRightText(this.$chapter);
 	}
 
-	notifications(text, link = 'javascript:void(0);', hide = true, app = '/img/whatsapp.svg', appText = 'whatsapp', from = 'batsegeziech') {
+	notifications(text, link = 'javascript:void(0);', hide = true, app = '/img/whatsapp.svg', appText = 'whatsapp', from = 'Priester Batsegeziech') {
 		this.$notificationApp.src = app;
         this.$notificationAppText.innerText = appText;
         this.$notificationFrom.innerText = from;
