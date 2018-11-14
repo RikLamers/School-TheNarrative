@@ -18,6 +18,21 @@ class Rebus {
             this.$rebusImg1 = ['/img/rebus/2-1.svg', '/img/rebus/2-2.svg', '/img/rebus/2-3.svg', '/img/rebus/2-4.svg', '/img/rebus/2-5.svg', '/img/rebus/2-6.svg', '/img/rebus/2-7.svg', '/img/rebus/2-8.svg', '/img/rebus/2-9.svg', '/img/rebus/2-10.svg', '/img/rebus/2-11.svg'];
             this.$rebusImg2 = ['/img/rebus/3-1.svg', '/img/rebus/3-2.svg', '/img/rebus/3-3.svg', '/img/rebus/3-4.svg', '/img/rebus/3-5.svg', '/img/rebus/3-6.svg', '/img/rebus/3-7.svg', '/img/rebus/3-8.svg', '/img/rebus/3-9.svg', '/img/rebus/3-10.svg', '/img/rebus/3-11.svg', '/img/rebus/3-12.svg'];
         }
+
+        // Notification
+		this.$notification = document.getElementById('o-notification');
+		if (this.$notification) {
+			this.$notificationApp = document.getElementById('o-notification__app');
+			this.$notificationAppText = document.getElementById('o-notification__apptext');
+			this.$notificationFrom = document.getElementById('o-notification__from');
+			this.$notificationText = document.getElementById('o-notification__text');
+            this.$notificationLink = document.getElementById('o-notification__link');
+            if (this.$holder) {
+                setTimeout(() => {
+                    this.notifications('Los de rebus op, en weet welke producten je moet halen!');
+                }, 5000);
+            }
+		}
 	}
 
     eventListeners() {
@@ -34,6 +49,21 @@ class Rebus {
             this.checkAnswer();
         });
     }
+
+    notifications(text, link = 'javascript:void(0);', hide = true, app = '/img/whatsapp.svg', appText = 'whatsapp', from = 'Priester Batsegeziech') {
+		this.$notificationApp.src = app;
+        this.$notificationAppText.innerText = appText;
+        this.$notificationFrom.innerText = from;
+        this.$notificationText.innerText = text;
+        this.$notificationLink.href = link;
+		this.$notification.className = 'o-notification o-notification--show';
+
+		if (hide) {
+			setTimeout(() => {
+				this.$notification.className = 'o-notification o-notification--hide';
+			}, 5000);
+		}
+	}
 
     checkAnswer() {
         switch (this.$stage) {
@@ -91,7 +121,7 @@ class Rebus {
                 break;
             case 3:
                 if (this.$input.value.toLowerCase() === 'venkel') {
-                    console.log('geslaagd');
+                    this.notifications('Wat goed! Je hebt alle producten verzameld! Zegen nu de...', '/whatsapp.html', false);
                 } else {
                     this.$input.value = '';
                 }
