@@ -29,6 +29,7 @@ class DragDrop {
                 this.$notificationFrom = document.getElementById('o-notification__from');
                 this.$notificationText = document.getElementById('o-notification__text');
                 this.$notificationLink = document.getElementById('o-notification__link');
+                this.notifications('Met welke drie voorwerpen kan je de zwerver weer laten zien? Sleep ze boven de lijn op het scherm!');
             }
         }
 	}
@@ -99,13 +100,23 @@ class DragDrop {
     }
 
     complete() {
-        this.$notificationApp.src = '/img/whatsapp.svg';
-        this.$notificationAppText.innerText = 'whatsapp';
-        this.$notificationFrom.innerText = 'Batsegeziech';
-        this.$notificationText.innerText = 'Lekker gewerkt pik! Ik heb je volgende opdracht! lees het hele appje.';
-        this.$notificationLink.href = 'https://www.google.com';
-        this.$notification.className = 'o-notification o-notification--show';
+        this.notifications('Goed gedaan...', '/whatsapp.html', false);
     }
+
+    notifications(text, link = 'javascript:void(0);', hide = true, app = '/img/whatsapp.svg', appText = 'whatsapp', from = 'Priester Batsegeziech') {
+		this.$notificationApp.src = app;
+        this.$notificationAppText.innerText = appText;
+        this.$notificationFrom.innerText = from;
+        this.$notificationText.innerText = text;
+        this.$notificationLink.href = link;
+		this.$notification.className = 'o-notification o-notification--show';
+
+		if (hide) {
+			setTimeout(() => {
+				this.$notification.className = 'o-notification o-notification--hide';
+			}, 7500);
+		}
+	}
 
 	initialize() {
         this.setup();
