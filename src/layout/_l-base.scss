@@ -62,7 +62,7 @@ body {
 	// background: $header-bg;
 	background: rgba(0, 0, 0, .5);
 	@include clearfix();
-	z-index: 100;
+	z-index: 1;
 
 	// @media (min-width: breakpoint-min(lg)) {
 	// 	//position: relative;
