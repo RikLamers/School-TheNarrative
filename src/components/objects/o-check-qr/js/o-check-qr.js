@@ -11,6 +11,7 @@ class CheckQR {
         this.$btn = this.$holder;
         this.$deviceInfo = JSON.parse(localStorage.getItem('deviceInfo'));
         this.$supportedBrowsers = this.getSupportedBrowsers();
+        this.setLocalStorage();
 	}
 
     eventListeners() {
@@ -20,12 +21,22 @@ class CheckQR {
                 const isSupported = this.checkSupport(this.$deviceInfo.browser);
     
                 if (isSupported) {
-                    window.location.href = '/game/qr-reader';
+                    window.location.href = '/game/qr-reader.html';
                 } else {
-                    window.location.href = '/game/qr-photo';
+                    window.location.href = '/game/qr-photo.html';
                 }
     
             });
+        }
+    }
+
+    setLocalStorage() {
+        const isSupported = this.checkSupport(this.$deviceInfo.browser);
+    
+        if (isSupported) {
+            localStorage.setItem('qr', JSON.stringify('/game/qr-reader.html'));
+        } else {
+            localStorage.setItem('qr', JSON.stringify('/game/qr-photo.html'));
         }
     }
 
