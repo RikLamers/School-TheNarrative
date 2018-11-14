@@ -15,17 +15,29 @@ class Instagram {
         this.$lastY = 0;
 
         // All elements
-        this.$profilePic = document.getElementsByClassName('m-instagram__profilepic')[0];
-        this.$profileName = document.getElementsByClassName('m-instagram__profilename');
-        this.$postLocation = document.getElementById('m-instagram__location');
-        this.$postPhoto = document.getElementById('m-instagram__photo');
-        this.$likedBy = document.getElementById('m-instagram__likedby');
-        this.$otherLikes = document.getElementById('m-instagram__others');
-        this.$postComment = document.getElementById('m-instagram__postcomment');
-        this.$allComments = document.getElementById('m-instagram__allcomments');
-        this.$commentBy = document.getElementById('m-instagram__commentby');
-        this.$comment = document.getElementById('m-instagram__comment');
-        this.$timestamp = document.getElementById('m-instagram__timestamp');
+        if (this.$holder) {
+            this.$profilePic = document.getElementsByClassName('m-instagram__profilepic')[0];
+            this.$profileName = document.getElementsByClassName('m-instagram__profilename');
+            this.$postLocation = document.getElementById('m-instagram__location');
+            this.$postPhoto = document.getElementById('m-instagram__photo');
+            this.$likedBy = document.getElementById('m-instagram__likedby');
+            this.$otherLikes = document.getElementById('m-instagram__others');
+            this.$postComment = document.getElementById('m-instagram__postcomment');
+            this.$allComments = document.getElementById('m-instagram__allcomments');
+            this.$commentBy = document.getElementById('m-instagram__commentby');
+            this.$comment = document.getElementById('m-instagram__comment');
+            this.$timestamp = document.getElementById('m-instagram__timestamp');
+        }
+
+        // Notification
+		this.$notification = document.getElementById('o-notification');
+		if (this.$notification) {
+			this.$notificationApp = document.getElementById('o-notification__app');
+			this.$notificationAppText = document.getElementById('o-notification__apptext');
+			this.$notificationFrom = document.getElementById('o-notification__from');
+			this.$notificationText = document.getElementById('o-notification__text');
+			this.$notificationLink = document.getElementById('o-notification__link');
+		}
 
         this.$postInfo = [
             {
@@ -41,10 +53,10 @@ class Instagram {
                 accLocation: 'Maastricht, The Netherlands',
                 postImg: '/img/instagram/posts/h3.jpg',
                 postText: '<i>#stservaas #christendom #merchandise #kleding #mode #musthave #opisop #maastricht #merovingen</i>',
-                postLikedBy: 'Bastiaan',
-                postLikes: '51 others',
-                postCommentBy: 'TjeuDas66',
-                postCommentText: 'VERRAAD!🤬😡',
+                postLikedBy: 'Pater-Wycks',
+                postLikes: '43 others',
+                postCommentBy: 'HenrietteNeijt',
+                postCommentText: 'Wie zou deze wonderschone kledij toch gemaakt hebben?!',
                 postCommentCount: '3'
             },
             {
@@ -62,27 +74,27 @@ class Instagram {
             {
                 chapter: 8,
                 accName: 'TjeuDas66',
-                accPic: '/img/instagram/posts/td-pf.png',
+                accPic: '/img/pf/tjeu.jpg',
                 accLocation: 'Maastricht, The Netherlands',
                 postImg: '/img/instagram/posts/h8.jpg',
                 postText: '<i>#stservaasbestaatniet #verwonderd #merchandise #kleding #mode #musthave #opisop #maastricht #merovingen</i>',
-                postLikedBy: 'Frederik',
-                postLikes: '99 others',
-                postCommentBy: 'Frederik',
-                postCommentText: 'Super Tjeu!👍🏻',
+                postLikedBy: 'Rinalda',
+                postLikes: '159 others',
+                postCommentBy: 'PBatsegeziech',
+                postCommentText: 'Dit slaat alles! <i>#Plagiaat</i>',
                 postCommentCount: '37'
             },
             {
                 chapter: 9,
                 accName: 'ChristendomMaastricht',
-                accPic: '/img/instagram/posts/pf.png',
+                accPic: '/img/pf/christendom-maastricht.jpg',
                 accLocation: 'Maastricht, The Netherlands',
                 postImg: '/img/instagram/posts/h9.1.jpg',
                 postText: '<i>#stservaaswijn #stservaas #wijnisfijn #wonderbaarlijklekker #musthave #maastricht #merovingen</i>',
                 postLikedBy: 'Rinalda',
                 postLikes: '1357 others',
                 postCommentBy: 'Frederik',
-                postCommentText: 'Go Servaas!😇',
+                postCommentText: 'Ik hou van wijn! <i>#WijnIsFijn</i>',
                 postCommentCount: '501'
             },
             {
@@ -91,20 +103,20 @@ class Instagram {
             {
                 chapter: 9.1,
                 accName: 'ChristendomMaastricht',
-                accPic: '/img/instagram/posts/pf.png',
+                accPic: '/img/pf/christendom-maastricht.jpg',
                 accLocation: 'Maastricht, The Netherlands',
                 postImg: '/img/instagram/posts/h9.2.jpg',
                 postText: '<i>#stservaasisbier #stservaas #bierplezier #wonderbaarlijklekker #musthave #maastricht #merovingen</i>',
                 postLikedBy: 'TjeuDas66',
                 postLikes: '555 others',
                 postCommentBy: 'TjeuDas66',
-                postCommentText: 'Ik like alleen om bier, niet om die neppe "servaas"!',
+                postCommentText: 'Ik like alleen om het bier, niet om die neppe "servaas"! <i>#SintServaasBestaatNiet</i>',
                 postCommentCount: '65'
             },
             {
                 chapter: 9.2,
                 accName: 'ChristendomMaastricht',
-                accPic: '/img/instagram/posts/pf.png',
+                accPic: '/img/pf/christendom-maastricht.jpg',
                 accLocation: 'Maastricht, The Netherlands',
                 postImg: '/img/instagram/posts/h9.3.jpg',
                 postText: '<i>#stservaasabsint #stservaas #absintservaas #wonderbaarlijklekker #musthave #maastricht #merovingen</i>',
@@ -144,17 +156,48 @@ class Instagram {
 				this.$chapterStorage = this.$localStorage[i];
 				break;
 			}
-		}
-        this.placeRightText(this.$chapter);
+        }
+        if (this.$holder) {
+            this.placeRightText(this.$chapter);
+        }
     }
     
     placeRightText(chapter) {
 
-        if (chapter === 8) {
-            if (this.$chapterStorage.Instagram === 1) {
+        if (chapter === 2) { 
+            setTimeout(() => {
+                this.notifications('Ik las net een tweet...', '/whatsapp.html', false);
+                this.$localStorage[chapter].done = 1;
+                localStorage.setItem('progression', JSON.stringify(this.$localStorage));
+            }, 5000);
+        } else if (chapter === 7) {
+            setTimeout(() => {
+                this.$localStorage[chapter].whatsapp = 1;
+                localStorage.setItem('progression', JSON.stringify(this.$localStorage));
+                this.notifications('Op het einde van de brug...', '/whatsapp.html', false);
+            }, 5000);
+        } else if (chapter === 8) {
+            if (this.$chapterStorage.instagram === 0) {
+                chapter = 8;
+                setTimeout(() => {
+                    this.$localStorage[8].done = 1;
+                    localStorage.setItem('progression', JSON.stringify(this.$localStorage));
+                    this.notifications('Tjeu Das organiseerd bij...', '/whatsapp', false);
+                }, 5000);
+            } else if (this.$chapterStorage.instagram === 1) {
                 chapter = 10;
-            } else if (this.$chapterStorage.Instagram === 2) {
+                setTimeout(() => {
+                    this.$localStorage[8].done = 1;
+                    localStorage.setItem('progression', JSON.stringify(this.$localStorage));
+                    this.notifications('Tjeu Das organiseerd bij...', '/whatsapp', false);
+                }, 5000);
+            } else if (this.$chapterStorage.instagram === 2) {
                 chapter = 11;
+                setTimeout(() => {
+                    this.$localStorage[8].done = 1;
+                    localStorage.setItem('progression', JSON.stringify(this.$localStorage));
+                    this.notifications('Tjeu Das organiseerd bij...', '/whatsapp', false);
+                }, 5000);
             }
         }
 
@@ -173,6 +216,21 @@ class Instagram {
             this.$timestamp.innerText = Math.floor(Math.random() * 30);
         }
     }
+
+    notifications(text, link = 'javascript:void(0);', hide = true, app = '/img/whatsapp.svg', appText = 'whatsapp', from = 'Priester Batsegeziech') {
+		this.$notificationApp.src = app;
+        this.$notificationAppText.innerText = appText;
+        this.$notificationFrom.innerText = from;
+        this.$notificationText.innerText = text;
+        this.$notificationLink.href = link;
+		this.$notification.className = 'o-notification o-notification--show';
+
+		if (hide) {
+			setTimeout(() => {
+				this.$notification.className = 'o-notification o-notification--hide';
+			}, 5000);
+		}
+	}
 
 	initialize() {
 		this.setup();
