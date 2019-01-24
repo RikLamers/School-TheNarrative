@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'mobile-interface';
+$imageUrl: './assets/img/iphone-bg.png';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    font-family: $font-family--secondary;
+
+    @media (min-width: breakpoint-min(md)) {
+        display: none;
+    }
+
+    &__bg {
+        background: #f3e5d6;
+        background: url(https://tst.riklamers.com/img/iphone-bg.png);
+        background-position: center center;
+        background-size: cover;
+        display: block;
+        height: 100%;
+        min-height: 568px;
+        max-height: 812px;
+        position: relative;
+    }
+
+    &__topbar {
+        position: fixed;
+        width: 100%;
+        font-family: $font-family--secondary;
+        padding: 0 15px;
+        color: map-get($colors, white);
+        padding-bottom: 10px;
+        @include rem(12);
+    }
+
+    &__dot {
+        height: 5px;
+        width: 5px;
+        background-color: map-get($colors, white);
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    &__connection {
+        display: inline-block;
+        margin-left: 5px;
+        @include rem(10);
+    }
+
+    &__time {
+        text-align: center;
+    }
+
+    &__battery, &__progression {
+        float: right;
+        margin-left: 5px;
+    }
+
+    &__battfiller {
+        position: absolute;
+        height: 6.5px;
+        background: white;
+        margin-top: 5.5px;
+    }
+
+    //CONTENT
+    &__content {
+        padding-top: 25px;
+    }
+
+    &__apps {
+        max-width: 68px;
+        margin: 0 auto;
+        padding: 5px;
+        text-align: center;
+        color: map-get($colors, white);
+        @include rem(12);
+
+        img {
+            margin: 0;
+        }
+
+        p {
+            margin-top: 3px;
+        }
+
+    }
+
+    // Hotbar
+    &__hotbar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        .m-#{$module-name}__apps {
+            margin-top: 10px;
+        }
+
+    }
+
+    &__blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(10px);
+        filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask");
+        background-color: lighten(#D6A773, 25%);
+        opacity: .5;
+    }
+
+}
+
+.andriod {
+    .m-#{$module-name} {
+        height: calc(100% - 50px);
+    }
+}

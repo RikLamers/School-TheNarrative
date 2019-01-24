@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'form';
+$form-font-family: $font-family--primary;
+$form-font-weight: 600;
+$form-radius: 5px;
+$form-padding: 3rem;
+$form-border-width: 2px;
+$form-border-style: solid;
+$form-border-color: map-get($colors, primary);
+$form-margin: 1rem;
+$form-min-width: 100px;
+$form-width: 100%;
+$form-height: 100%;
+$form-background-color: map-get($colors, white);
+$form-font-color: choose-contrast-color($form-background-color);
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	min-width: $form-min-width;
+	width: $form-width;
+	height: $form-height;
+	color: $form-font-color;
+	font-family: $form-font-family;
+	font-weight: $form-font-weight;
+	padding: $form-padding;
+	margin: $form-margin;
+	background-color: $form-background-color;
+
+	&--border {
+		border: $form-border-width $form-border-style $form-border-color;
+	}
+
+	&--rounded {
+		border-radius: $form-radius;
+	}
+
+	fieldset {
+		min-width: 0;
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+
+	legend {
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin-bottom: 0.5rem;
+		line-height: inherit;
+		@include rem(24);
+	}
+
+	label {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+		@include rem(14);
+	}
+
+	[role='button'],
+	a,
+	area,
+	button,
+	input,
+	label,
+	select,
+	summary,
+	textarea {
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+	}
+
+	button,
+	input,
+	select,
+	textarea {
+		line-height: inherit;
+	}
+
+	// CHECKBOX & RADIOBUTTON
+	[type='checkbox'],
+	[type='radio'] {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		padding: 0;
+	}
+
+	[type='submit'] {
+		width: auto;
+	}
+
+	// TEXTAREA
+	textarea {
+		resize: vertical;
+	}
+
+	// DATE & TIME INPUT
+	input[type='date'],
+	input[type='time'],
+	input[type='datetime-local'],
+	input[type='month'] {
+		-webkit-appearance: listbox;
+	}
+}

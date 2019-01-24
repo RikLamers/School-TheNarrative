@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'label';
+$label-font-color: map-get($colors, black);
+$label-font-family: $font-family--primary;
+$label-font-weight: 600;
+$label-margin: 1rem 0 0.5rem 0.5rem;
+$label-margin--left: 1rem 1rem 0.5rem 0;
+$label-margin--right: 1rem 0rem 0.5rem 1rem;
+$label-margin--rounded: 1rem 0 0.5rem 1rem;
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	display: block;
+	margin: $label-margin;
+	font-family: $label-font-family;
+	color: $label-font-color;
+	font-weight: $label-font-weight;
+
+	&--left {
+		display: inline-block;
+		margin: $label-margin--left;
+	}
+
+	&--right {
+		display: inline-block;
+		margin: $label-margin--right;
+	}
+
+	&--rounded {
+		margin: $label-margin--rounded;
+	}
+}

@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'inputfield';
+$inputfield-font-family: $font-family--primary;
+$inputfield-radius: 5px;
+$inputfield-padding: 1rem;
+$inputfield-border-width: 2px;
+$inputfield-border-style: solid;
+$inputfield-border-color--primary: map-get($colors, primary);
+$inputfield-border-color--secondary: map-get($colors, secondary);
+$inputfield-outline: none;
+$inputfield-margin: 0rem 0 1rem;
+$inputfield-min-width: 100px;
+$inputfield-width: 100%;
+$inputfield-background-color: map-get($colors, white);
+$inputfield-font-color: choose-contrast-color($inputfield-background-color);
+$inputfield-btn-color: map-get($colors, primary);
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+input,
+[type='checkbox'],
+[type='date'],
+[type='datetime-local'],
+[type='email'],
+[type='file'],
+[type='hidden'],
+[type='image'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='radio'],
+[type='reset'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'] {
+	border-radius: $inputfield-radius;
+	border: $inputfield-border-width $inputfield-border-style
+		$inputfield-border-color--primary;
+	padding: $inputfield-padding;
+	width: $inputfield-width;
+	min-width: $inputfield-min-width;
+	outline: $inputfield-outline;
+	margin: $inputfield-margin;
+	font-family: $inputfield-font-family;
+
+	&:hover,
+	&:focus {
+		border-color: darken(map-get($colors, black), 10%);
+	}
+}
+
+[type='range'] {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	min-height: 1px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	transition: opacity 0.2s ease-in-out;
+	border: none;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	border-radius: 100%;
+	transition: all 0.2s ease-in-out;
+	background-color: $inputfield-border-color--primary;
+
+	&:hover {
+		background-color: darken($inputfield-border-color--primary, 10%);
+	}
+}
+
+[type='range']::-moz-range-thumb {
+	width: 30px;
+	height: 30px;
+	background-color: $inputfield-border-color--primary;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		background-color: darken($inputfield-border-color--primary, 10%);
+	}
+}
+
+[type='color'] {
+	position: relative;
+	width: 100px;
+	height: 40px;
+	padding: 0;
+	margin-top: 35px;
+
+	&::before {
+		content: '';
+	}
+
+	&::after {
+		content: 'Selecteer een kleur';
+		position: absolute;
+		top: -25px;
+		left: 0;
+		font-family: $inputfield-font-family;
+		width: 150px;
+	}
+}
+
+[type='button'],
+[type='submit'] {
+	@extend %button-base;
+	color: choose-contrast-color($inputfield-btn-color);
+	background: $inputfield-btn-color;
+	border: none;
+
+	&:hover {
+		background: darken($inputfield-btn-color, 10%);
+	}
+}
+
+.o-#{$object-name} {
+	border-radius: $inputfield-radius;
+	font-family: $inputfield-font-family;
+	color: $inputfield-font-color;
+	padding: $inputfield-padding;
+	outline: $inputfield-outline;
+	margin: $inputfield-margin;
+	min-width: $inputfield-min-width;
+	width: $inputfield-width;
+	background-color: $inputfield-background-color;
+
+	&--primary {
+		border: $inputfield-border-width $inputfield-border-style
+			$inputfield-border-color--primary;
+
+		&:hover,
+		&:focus {
+			border-color: darken($inputfield-border-color--primary, 10%);
+		}
+	}
+
+	&--secondary {
+		border: $inputfield-border-width $inputfield-border-style
+			$inputfield-border-color--secondary;
+
+		&:hover,
+		&:focus {
+			border-color: darken($inputfield-border-color--secondary, 10%);
+		}
+	}
+
+	&--small {
+		width: 100%;
+		max-width: 200px;
+	}
+
+	&--medium {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	&--large {
+		width: 100%;
+		max-width: 600px;
+	}
+
+	&--rounded {
+		border-radius: 50px;
+	}
+}

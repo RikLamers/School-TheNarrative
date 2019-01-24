@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'notification';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.o-#{$object-name} {
+	font-family: $font-family--secondary;
+	background-color: #c5e6ff;
+	width: 95vw;
+	border-radius: 15px;
+	padding: 10px 0;
+	position: absolute;
+	max-height: 150px;
+	top: -150px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	transition: all 200ms ease-in-out;
+	transition-delay: 2s;
+	z-index: 2;
+
+	&--show {
+		top: 10px!important;
+	}
+
+	&--hide {
+		top: -150px!important;
+	}
+
+
+	strong, span, p {
+		font-family: $font-family--secondary;
+		color: map-get($colors, black);
+	}
+
+	img {
+		margin: 0;
+	}
+
+	span {
+		line-height: 20px;
+		text-transform: uppercase;
+		@include rem(12);
+	}
+
+	strong {
+		margin-top: 10px;
+		display: block;
+	}
+
+	p {
+		margin: 0;
+	}
+
+}

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$object-name: 'image';
+$caption-txt-color: map-get($colors, gray8);
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+%base-image {
+	max-width: 100%;
+	height: auto;
+	border: none;
+	vertical-align: middle;
+	margin: $content-spacing 0;
+}
+
+.o-#{$object-name} {
+	@extend %base-image;
+}
+
+img {
+	@extend %base-image;
+}
+
+figure {
+	margin: 0;
+	margin: $content-spacing 0;
+
+	img {
+		margin: 0;
+	}
+
+	figcaption {
+		@include caption($caption-txt-color);
+		padding-bottom: 0;
+	}
+}

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+
+$object-name: 'logo';
+$logo-width: 200px;
+$logo-height: 50px;
+$logo-home: './assets/img/home-logo.svg';
+$logo-meropedia: './assets/img/meropedia-logo.svg';
+$logo-merovinger: './assets/img/merovinger-logo.svg';
+$logo-img-width--mobile: 100px;
+$logo-img-height--mobile: 25px;
+$logo-img-width--medium: 140px;
+$logo-img-height--medium: 35px;
+$logo-img-width: 200px;
+$logo-img-height: 50px;
+
+$logo-meropedia-small: 240px;
+$logo-meropedia-medium: 300px;
+$logo-meropedia-width: 400px;
+$logo-meropedia-height: 60px;
+
+/* =============================================================================
+BASE
+============================================================================= */
+
+.meropedia {
+
+	.o-#{$object-name} {
+		width: $logo-img-width--medium;
+		height: $logo-img-height--medium;
+		background: url($logo-meropedia);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		display: inline-block;
+
+		@media (min-width: breakpoint-min(sm)) {
+			width: $logo-img-width--medium;
+			height: $logo-img-height--medium;
+		}
+
+		@media (min-width: breakpoint-min(lg)) {
+			width: $logo-img-width;
+			height: $logo-img-height;
+		}
+	}
+
+}
+
+.merovinger {
+	.o-#{$object-name} {
+		width: $logo-img-width--medium;
+		height: $logo-img-height--medium;
+		background: url($logo-merovinger);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		display: inline-block;
+
+		@media (min-width: breakpoint-min(sm)) {
+			width: $logo-img-width--medium;
+			height: $logo-img-height--medium;
+		}
+
+		@media (min-width: breakpoint-min(lg)) {
+			width: $logo-img-width;
+			height: $logo-img-height;
+		}
+	}
+}
+
+.o-#{$object-name} {
+	width: $logo-meropedia-small;
+	height: $logo-meropedia-height;
+	background: url($logo-home);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	display: inline-block;
+	color: map-get($colors, black);
+
+	@media (min-width: breakpoint-min(sm)) {
+		width: $logo-meropedia-medium;
+	}
+
+	@media (min-width: breakpoint-min(lg)) {
+		width: $logo-meropedia-width;
+	}
+
+}

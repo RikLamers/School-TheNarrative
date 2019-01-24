@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* =============================================================================
+CONFIG
+============================================================================= */
+$container-maxwidth: 1170px;
+
+/* =============================================================================
+SELECTOR: CONTAINER WIDTHS
+DESCRIPTION: Set the container width, and override it for fixed navbars in media queries.
+============================================================================= */
+
+.fl-container {
+	max-width: $container-maxwidth;
+	@include make-container();
+}
+
+/* =============================================================================
+SELECTOR: FLUID CONTAINER
+DESCRIPTION: Utilizes the mixin meant for fixed width containers,
+			but with 100% width for fluid, full width layouts.
+============================================================================= */
+
+.fl-container--fluid {
+	@include make-container();
+}
+
+/* =============================================================================
+SELECTOR: ROW
+DESCRIPTION: No need for a clear in the row because of flexbox. Fallback
+			has a clear and float function.
+============================================================================= */
+
+.fl-row {
+	@include make-row(flex);
+}
+
+.safari,
+.chrome28,
+.chrome28_0 {
+	.fl-row {
+		display: -webkit-box;
+		display: -moz-box;
+		// display: box;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+}
+
+// Remove the negative margin from default .l-row, then the horizontal padding
+// from all immediate children columns (to prevent runaway style inheritance).
+.fl-no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+
+	> .fl-col,
+	> [class*='fl-col-'] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+/* =============================================================================
+SELECTOR: COLUMNS
+DESCRIPTION: Common styles for small and large grid columns
+============================================================================= */
+
+@include make-grid-columns(fl, flex);
+
+/* =============================================================================
+SELECTOR: COLUMNS
+DESCRIPTION: Fixing floating the columns next to each other
+============================================================================= */
+
+.ie9 {
+	[class*='fl-col-'] {
+		float: left;
+		height: 100%;
+	}
+
+	.fl-row {
+		@include clearfix();
+	}
+}
+
+.ie10 {
+	.fl-row {
+		display: -ms-flexbox;
+	}
+}

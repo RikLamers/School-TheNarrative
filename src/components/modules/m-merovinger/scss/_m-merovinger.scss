@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'merovinger';
+
+$perkament-bg: './assets/img/merovinger/perkament-bg.jpg';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+    padding-bottom: 75px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: map-get($colors, black)!important;
+    }
+
+    &__bg {
+        background-image: url($perkament-bg);
+        background-position: center center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    a {
+        color: map-get($colors, twitterblue);
+
+        &:hover {
+            color: darken(map-get($colors, twitterblue), 20%);
+        }
+
+        &:visited {
+            color: darken(map-get($colors, twitterblue), 20%);
+        }
+
+
+    }
+
+    p {
+        i {
+            @include rem(12);
+        }
+    }
+
+    &__subtitle {
+        border-top: 2px solid map-get($colors, grayC);
+        border-bottom: 2px solid map-get($colors, grayC);
+        padding: 20px 0;
+        margin-bottom: 25px;
+
+        @media (min-width: breakpoint-min(md)) {
+            margin-bottom: 50px
+        }
+
+    }
+    
+    &__sources {
+        padding-bottom: 100px;
+
+        @media (min-width: breakpoint-min(sm)) {
+            padding-bottom: 25px;
+        }
+
+        a {
+            color: map-get($colors, twitterblue);
+            display: block;
+
+            &:hover {
+                color: darken(map-get($colors, twitterblue), 20%);
+            }
+
+            &:visited {
+                color: darken(map-get($colors, twitterblue), 20%);
+            }
+
+        }
+    }
+
+    &__footer {
+        width: 200px;
+        margin: 0;
+        padding: 0;
+        display: block;
+        margin: 0 auto;
+
+        @media (min-width: breakpoint-min(sm)) {
+            padding-top: 15px;
+        }
+
+        a {
+            color: map-get($colors, black);
+            text-align: center;
+            display: inherit;
+            line-height: 60px;
+        }
+
+    }
+
+}

@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* =============================================================================
+	CONFIG
+============================================================================= */
+
+$module-name: 'merofy';
+
+/* =============================================================================
+	BASE
+============================================================================= */
+
+.m-#{$module-name} {
+	height: 100%;
+	width: 100%;
+	background-color: map-get($colors, gray3);
+	color: map-get($colors, white);
+	font-family: $font-family--secondary;
+
+	&__topbar {
+		padding-top: 10px;
+		text-align: center;
+		@include rem(12);
+	}
+
+	&__album {
+		width: 90%;
+		display: block;
+		margin: 0 auto;
+
+		img {
+			margin: 0;
+		}
+
+	}
+
+	&__meta {
+		text-align: center;
+		margin-top: 10px;
+
+		p {
+			margin: 0;
+			@include rem(14);
+
+			&:last-child {
+				@include rem(12);
+				color: rgba(255, 255, 255, 0.7);
+			}
+
+		}
+	}
+
+	&__progression {
+		@include rem(12);
+		color: rgba(255, 255, 255, 0.7);
+		margin-top: 25px;
+
+		&__start {
+			position: absolute;
+			top: -25px;
+			left: 0;
+		}
+
+		&__end { 
+			position: absolute;
+			top: -25px;
+			right: 0;
+		}
+
+		&__dot {
+			height: 10px;
+			width: 10px;
+			border-radius: 100%;
+			background-color: map-get($colors, white);
+			position: absolute;
+			top: -5px;
+			left: 0;
+		}
+
+		&__bar {
+			width: 90%;
+			height: 2px;
+			background-color: rgba(255, 255, 255, 0.5);
+			display: block;
+			margin: 0 auto;
+			position: relative;
+		}
+
+	}
+
+	&__controls {
+		padding-top: 25px;
+		text-align: center;
+		
+		img {
+			height: 25px;
+			display: inline-block;
+		}
+
+	}
+
+	&__previous, &__next {
+		margin: 0;
+	}
+
+	&__play {
+		height: 75px!important;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+
+}

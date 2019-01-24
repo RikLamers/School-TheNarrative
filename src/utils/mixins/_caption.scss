@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* =============================================================================
+MIXIN: CAPTION
+USEAGE: @include caption(colorName);
+============================================================================= */
+
+@mixin caption($txt-color) {
+	text-align: left;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: map-get($colors, $txt-color);
+}
